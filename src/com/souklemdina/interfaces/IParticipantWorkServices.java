@@ -5,10 +5,20 @@
  */
 package com.souklemdina.interfaces;
 
+import com.souklemdina.entities.ParticipantWork;
+import java.util.List;
+
 /**
  *
- * @author lenovo
+ * @author ramyk
  */
 public interface IParticipantWorkServices {
+
+    public void create(ParticipantWork pw);
     
+    psvmdcgtrbu;
+
+    public List<ParticipantWork> findAll();
+
+    public void delete(ParticipantWork pw);
 }
