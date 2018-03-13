@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author ramyk
  */
-public class SoukLemdina extends Application {
+public abstract class SoukLemdina extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,7 +30,8 @@ public class SoukLemdina extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         launch(args);
     }
     

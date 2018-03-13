@@ -111,6 +111,22 @@ public class Produit implements Serializable {
         this.image = image;
     }
 
+    public Produit(Integer id, String libelle, String description, Integer quqntite, int promotion, String type, String categorie, double prix, Date updatedAt) {
+        this.id = id;
+        this.libelle = libelle;
+        this.description = description;
+        this.quqntite = quqntite;
+        this.promotion = promotion;
+        this.type = type;
+        this.categorie = categorie;
+        this.prix = prix;
+        this.updatedAt = updatedAt;
+    }
+
+    
+    
+    
+
     public Integer getId() {
         return id;
     }
