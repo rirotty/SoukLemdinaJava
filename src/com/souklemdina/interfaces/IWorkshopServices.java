@@ -14,11 +14,11 @@ import java.util.List;
  */
 public interface IWorkshopServices {
 
-    public void create(Workshop p);
+    public void create(Workshop w);
 
     public List<Workshop> findAll();
 
-    public void update(Workshop p);
+    public void update(Workshop w);
 
-    public void delete(Workshop p);
+    public void delete(Workshop w);
 }
