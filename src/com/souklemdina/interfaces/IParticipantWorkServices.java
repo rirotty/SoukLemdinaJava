@@ -15,8 +15,6 @@ import java.util.List;
 public interface IParticipantWorkServices {
 
     public void create(ParticipantWork pw);
-    
-    psvmdcgtrbu;
 
     public List<ParticipantWork> findAll();
 
