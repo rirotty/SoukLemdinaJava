@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/interfaces/IPostServices.java</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/entities/Evenement.java</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/interfaces/IEvenementServices.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/services/FosUserServices.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/souklemdina/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/entities/DataSource.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/tests/TestFosUser.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/entities/Workshop.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/interfaces/IFosUserServices.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/entities/FosUser.java</file>
+            <file>file:/C:/Users/hatem/Documents/NetBeansProjects/SoukLemdinaJava/src/com/souklemdina/tests/TestProduit.java</file>
         </group>
     </open-files>
 </project-private>

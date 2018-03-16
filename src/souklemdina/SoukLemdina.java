@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  */
 public abstract class SoukLemdina extends Application {
     
-    @Override
+    /*@Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
@@ -30,9 +30,9 @@ public abstract class SoukLemdina extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
+    /*public static void main(String[] args) 
     {
         launch(args);
-    }
+    }*/
     
 }

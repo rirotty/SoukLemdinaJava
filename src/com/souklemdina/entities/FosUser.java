@@ -6,7 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -159,6 +159,34 @@ public class FosUser implements Serializable {
         this.datenaiss = datenaiss;
     }
 
+    public FosUser(Integer id, String username, String usernameCanonical, String email, String emailCanonical, boolean enabled, String salt, String password, Date lastLogin, String confirmationToken, Date passwordRequestedAt, String roles, String gender, String firstname, String lastname, String rue, Integer zipCode, String ville, String pays, String phone, Integer nbsignal, Date datenaiss) {
+        this.id = id;
+        this.username = username;
+        this.usernameCanonical = usernameCanonical;
+        this.email = email;
+        this.emailCanonical = emailCanonical;
+        this.enabled = enabled;
+        this.salt = salt;
+        this.password = password;
+        this.lastLogin = lastLogin;
+        this.confirmationToken = confirmationToken;
+        this.passwordRequestedAt = passwordRequestedAt;
+        this.roles = roles;
+        this.gender = gender;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.rue = rue;
+        this.zipCode = zipCode;
+        this.ville = ville;
+        this.pays = pays;
+        this.phone = phone;
+        this.nbsignal = nbsignal;
+        this.datenaiss = datenaiss;
+        
+    }
+
+    
+    
     public Integer getId() {
         return id;
     }

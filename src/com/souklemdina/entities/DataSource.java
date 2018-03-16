@@ -22,7 +22,7 @@ public class DataSource {
     // De Java version 1.2 à 1.4, il est possible d'utiliser la classe ThreadLocal.
     private static DataSource instance = null;
 
-    public final static String DB_URL = "jdbc:mysql://localhost:3306/bdworkshop";
+    public final static String DB_URL = "jdbc:mysql://localhost:3306/souklemdina";
     public final static String DB_USERNAME = "root";
     public final static String DB_PASSWORD = "";
 
