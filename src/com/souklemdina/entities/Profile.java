@@ -67,6 +67,11 @@ public class Profile implements Serializable {
         this.id = id;
     }
     
+    public Profile(Integer id, Integer idUser) {
+        this.id = id;
+        this.idUser = idUser;
+    }
+    
     public Profile(Integer id, String tagline, Date updatedAt, String aboutMe) {
         this.id = id;
         this.tagline = tagline;
