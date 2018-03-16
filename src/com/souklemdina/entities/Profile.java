@@ -66,10 +66,18 @@ public class Profile implements Serializable {
     public Profile(Integer id) {
         this.id = id;
     }
-
+    
     public Profile(Integer id, String tagline, Date updatedAt, String aboutMe) {
         this.id = id;
         this.tagline = tagline;
+        this.updatedAt = updatedAt;
+        this.aboutMe = aboutMe;
+    }
+    
+    public Profile(String tagline, String image, Date updatedAt, String aboutMe, FosUser idUser){
+        this.idUser = idUser;
+        this.tagline = tagline;
+        this.image = image;
         this.updatedAt = updatedAt;
         this.aboutMe = aboutMe;
     }

@@ -81,6 +81,27 @@ public class Post implements Serializable {
         this.updatedAt = updatedAt;
     }
 
+    public Post(Integer id, Date date, String texte, String titre, Integer nbSignal, String image, Date updatedAt, FosUser idUser) {
+        this.id = id;
+        this.date = date;
+        this.texte = texte;
+        this.titre = titre;
+        this.nbSignal = nbSignal;
+        this.image = image;
+        this.updatedAt = updatedAt;
+        this.idUser = idUser;
+    }
+    
+    public Post(Integer id, Date date, String texte, String titre, String image, Date updatedAt, FosUser idUser) {
+        this.id = id;
+        this.date = date;
+        this.texte = texte;
+        this.titre = titre;
+        this.image = image;
+        this.updatedAt = updatedAt;
+        this.idUser = idUser;
+    }
+
     public Integer getId() {
         return id;
     }
