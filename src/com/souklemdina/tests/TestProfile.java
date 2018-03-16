@@ -5,10 +5,22 @@
  */
 package com.souklemdina.tests;
 
+import com.souklemdina.entities.FosUser;
+import com.souklemdina.entities.Profile;
+import com.souklemdina.services.ProfileServices;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 /**
  *
  * @author ramyk
  */
 public class TestProfile {
-    
+    public static void main(String[] args) {
+        ProfileServices ps = new ProfileServices();
+        ps.findAll().stream().map(a -> "Le profile d'id: " + a.getId() + " est de l'utilisateur: " + a.getIdUser() + " .").forEach(System.out::println);
+        Profile p = new Profile(10,9);
+        ps.delete(p);
+    }
 }

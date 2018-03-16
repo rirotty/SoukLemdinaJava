@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.souklemdina.entities;
+package com.souklemdina.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,7 +37,7 @@ public class DataSource {
         super();
         try {
             conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("DB Connection created successfully.");
+            System.out.println(DB_URL + ": DB Connection created successfully.");
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }

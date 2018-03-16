@@ -58,7 +58,7 @@ public class Profile implements Serializable {
     private String aboutMe;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @OneToOne
-    private FosUser idUser;
+    private Integer idUser;
 
     public Profile() {
     }
@@ -66,10 +66,24 @@ public class Profile implements Serializable {
     public Profile(Integer id) {
         this.id = id;
     }
-
+    
+    public Profile(Integer id, Integer idUser) {
+        this.id = id;
+        this.idUser = idUser;
+    }
+    
     public Profile(Integer id, String tagline, Date updatedAt, String aboutMe) {
         this.id = id;
         this.tagline = tagline;
+        this.updatedAt = updatedAt;
+        this.aboutMe = aboutMe;
+    }
+    
+    public Profile(Integer id, String tagline, String image, Date updatedAt, String aboutMe, Integer idUser){
+        this.id = id;
+        this.idUser = idUser;
+        this.tagline = tagline;
+        this.image = image;
         this.updatedAt = updatedAt;
         this.aboutMe = aboutMe;
     }
@@ -114,11 +128,11 @@ public class Profile implements Serializable {
         this.aboutMe = aboutMe;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 
