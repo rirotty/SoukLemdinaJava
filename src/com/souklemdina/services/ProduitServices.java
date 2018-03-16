@@ -5,7 +5,7 @@
  */
 package com.souklemdina.services;
 
-import com.souklemdina.entities.DataSource;
+import com.souklemdina.util.DataSource;
 import com.souklemdina.entities.Produit;
 import com.souklemdina.interfaces.IProduitService;
 import java.sql.Connection;

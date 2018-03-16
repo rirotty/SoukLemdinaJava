@@ -8,7 +8,9 @@ package com.souklemdina.tests;
 import com.souklemdina.entities.FosUser;
 import com.souklemdina.entities.Profile;
 import com.souklemdina.services.ProfileServices;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -16,10 +18,7 @@ import java.util.Date;
  */
 public class TestProfile {
     public static void main(String[] args) {
-        FosUser f = new FosUser(9);
-        Profile p1 = new Profile("Hey There", "/jhdwhw/", new Date(System.currentTimeMillis()), "I'm the administrator here", f);
         ProfileServices ps = new ProfileServices();
-        
-        ps.create(p1);
+        ps.findAll().stream().map(a -> "Le profile d'id: " + a.getId() + " est de l'utilisateur: " + a.getIdUser() + " .").forEach(System.out::println);
     }
 }

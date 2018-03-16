@@ -35,7 +35,7 @@ public class ProfileServices implements IProfileServices{
             pst.setString(2, p.getImage());
             pst.setDate(3, new Date(p.getUpdatedAt().getDate()));
             pst.setString(4, p.getAboutMe());
-            pst.setInt(5, p.getIdUser().getId());
+            pst.setInt(5, p.getIdUser());
             pst.executeUpdate();
             System.out.println("- New Profile added!");
         } catch (SQLException ex) {
@@ -53,7 +53,7 @@ public class ProfileServices implements IProfileServices{
             pst = conn.prepareStatement(query);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                l.add(new Profile(rs.getString("tagline"), rs.getString("image"), (Date)rs.getDate("updated_at"), rs.getString("about_me"), (FosUser)rs.getObject("id_user")));
+                l.add(new Profile(rs.getInt("id"), rs.getString("tagline"), rs.getString("image"), (Date)rs.getDate("updated_at"), rs.getString("about_me"), rs.getInt("id_user")));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -97,7 +97,7 @@ public class ProfileServices implements IProfileServices{
         try {
             statement = conn.prepareStatement(sql);
             statement.setInt(1, p.getId());
-            statement.setInt(2, p.getIdUser().getId());
+            statement.setInt(2, p.getIdUser());
             rowsDeleted = statement.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
