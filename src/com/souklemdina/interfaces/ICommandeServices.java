@@ -5,10 +5,19 @@
  */
 package com.souklemdina.interfaces;
 
+import com.souklemdina.entities.Commande;
+import java.util.List;
+
 /**
  *
  * @author asus
  */
 public interface ICommandeServices {
-    
+     public void create(Commande c);
+
+    public List<Commande> findAll();
+
+    public void update(Commande c);
+
+    public void delete(Commande c);   
 }

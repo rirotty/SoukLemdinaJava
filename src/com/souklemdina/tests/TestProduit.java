@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.souklemdina.interfaces;
-
-
-import com.souklemdina.entities.Wishlist;
-
+package com.souklemdina.tests;
 
 /**
  *
  * @author asus
  */
-public interface IWishlistServices {
-        public void create(Wishlist w);
-
+public class TestProduit {
+    
 }

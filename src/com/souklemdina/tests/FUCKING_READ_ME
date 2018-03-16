@@ -1,0 +1,3 @@
+When you're gonna create a test in this package, go to the "souklemdina" package, under the SoukLemdina.java class, comment
+the main function (all of it), and comment any other main function in the classes of the com.souklemdina.tests package.
+Have Fun <3
