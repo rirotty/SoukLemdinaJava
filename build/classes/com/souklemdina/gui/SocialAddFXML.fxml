@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #333;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialAddFXMLController">
+   <children>
+      <ImageView fx:id="logo" fitHeight="91.0" fitWidth="81.0" layoutX="253.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../ressources/img/logos/app.png" />
+         </image></ImageView>
+      <TextArea fx:id="txarAbout" layoutX="200.0" layoutY="279.0" prefHeight="90.0" prefWidth="200.0" />
+      <TextArea fx:id="txarTag" layoutX="201.0" layoutY="204.0" prefHeight="46.0" prefWidth="200.0" />
+      <Label fx:id="labAbout" layoutX="200.0" layoutY="258.0" text="Parlez-nous de vous" textFill="WHITE">
+         <font>
+            <Font name="Raleway" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="labTag" layoutX="201.0" layoutY="184.0" text="Slogan Du Profile" textFill="WHITE">
+         <font>
+            <Font name="Raleway" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="butImg" layoutX="349.0" layoutY="149.0" mnemonicParsing="false" text="Button" />
+      <Label fx:id="labImg" layoutX="201.0" layoutY="154.0" text="Image du profile" textFill="WHITE">
+         <font>
+            <Font name="Raleway" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

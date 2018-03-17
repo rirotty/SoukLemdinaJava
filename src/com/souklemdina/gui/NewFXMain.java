@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package souklemdina;
+package com.souklemdina.gui;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,11 +16,11 @@ import javafx.stage.Stage;
  *
  * @author ramyk
  */
-public abstract class SoukLemdina extends Application {
+public class NewFXMain extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -30,8 +31,7 @@ public abstract class SoukLemdina extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         launch(args);
     }
     
