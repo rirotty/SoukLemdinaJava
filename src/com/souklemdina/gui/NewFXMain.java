@@ -17,13 +17,13 @@ import javafx.stage.Stage;
  * @author ramyk
  */
 public class NewFXMain extends Application {
-    
+
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -32,7 +32,8 @@ public class NewFXMain extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         launch(args);
     }
-    
+
 }
