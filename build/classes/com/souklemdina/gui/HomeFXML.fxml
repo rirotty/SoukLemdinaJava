@@ -47,7 +47,7 @@
                   <Image url="@../../../ressources/img/icons/weekly-calendar.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="btn_workspace" fitHeight="52.0" fitWidth="52.0" layoutX="20.0" layoutY="301.0" onMouseClicked="#handleButtonAction" onMousePressed="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="btn">
+            <ImageView fx:id="btn_workshop" fitHeight="52.0" fitWidth="52.0" layoutX="20.0" layoutY="301.0" onMouseClicked="#handleButtonAction" onMousePressed="#handleButtonAction" pickOnBounds="true" preserveRatio="true" styleClass="btn">
                <image>
                   <Image url="@../../../ressources/img/icons/luggage.png" />
                </image>
@@ -107,9 +107,9 @@
             </ImageView>
             <AnchorPane fx:id="pan_event" prefHeight="555.0" prefWidth="908.0" />
          </children></AnchorPane>
-      <AnchorPane fx:id="anch_workspace" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;" visible="false">
+      <AnchorPane fx:id="anch_workshop" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>
-            <Label layoutX="120.0" layoutY="242.0" text="WorkspaceAnchorPane">
+            <Label layoutX="120.0" layoutY="242.0" text="WorkshopAnchorPane">
                <font>
                   <Font size="58.0" />
                </font>

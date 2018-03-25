@@ -29,8 +29,6 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private ImageView btn_event;
     @FXML
-    private ImageView btn_workspace;
-    @FXML
     private ImageView btn_local;
     @FXML
     private ImageView btn_user;
@@ -40,8 +38,6 @@ public class HomeFXMLController implements Initializable {
     private AnchorPane anch_shop;
     @FXML
     private AnchorPane anch_event;
-    @FXML
-    private AnchorPane anch_workspace;
     @FXML
     private AnchorPane anch_local;
     @FXML
@@ -58,6 +54,10 @@ public class HomeFXMLController implements Initializable {
     private AnchorPane pan_local;
     @FXML
     private AnchorPane pan_user;
+    @FXML
+    private ImageView btn_workshop;
+    @FXML
+    private AnchorPane anch_workshop;
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
@@ -67,42 +67,42 @@ public class HomeFXMLController implements Initializable {
             anch_profile.setVisible(true);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
-            anch_workspace.setVisible(false);
+            anch_workshop.setVisible(false);
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_shop) {
             anch_profile.setVisible(false);
             anch_shop.setVisible(true);
             anch_event.setVisible(false);
-            anch_workspace.setVisible(false);
+            anch_workshop.setVisible(false);
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_event) {
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(true);
-            anch_workspace.setVisible(false);
+            anch_workshop.setVisible(false);
             anch_local.setVisible(false);
             anch_user.setVisible(false);
-        } else if (event.getTarget() == btn_workspace) {
+        } else if (event.getTarget() == btn_workshop) {
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
-            anch_workspace.setVisible(true);
+            anch_workshop.setVisible(true);
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_local) {
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
-            anch_workspace.setVisible(false);
+            anch_workshop.setVisible(false);
             anch_local.setVisible(true);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_user) {
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
-            anch_workspace.setVisible(false);
+            anch_workshop.setVisible(false);
             anch_local.setVisible(false);
             anch_user.setVisible(true);
         }

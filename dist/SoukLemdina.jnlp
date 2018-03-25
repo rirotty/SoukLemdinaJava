@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SoukLemdina.jar" size="1594398" download="eager" />
+    <jar href="SoukLemdina.jar" size="1594404" download="eager" />
     <jar href="lib/eclipselink.jar" size="8478776" download="eager" />
     <jar href="lib/javax.persistence_2.1.0.v201304241213.jar" size="164637" download="eager" />
     <jar href="lib/jfoenix-0.0.0-SNAPSHOT.jar" size="2461714" download="eager" />
