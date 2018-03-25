@@ -5,12 +5,8 @@
  */
 package com.souklemdina.tests;
 
-import com.souklemdina.entities.FosUser;
 import com.souklemdina.entities.Profile;
 import com.souklemdina.services.ProfileServices;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 /**
  *

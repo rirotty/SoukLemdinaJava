@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Users/ramyk/Documents/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/SocialAddFXMLController.java</file>
-            <file>file:/D:/Users/ramyk/Documents/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/NewFXMain.java</file>
-            <file>file:/D:/Users/ramyk/Documents/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/SocialAddFXML.fxml</file>
+            <file>file:/mnt/Data/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/homefxml.css</file>
+            <file>file:/mnt/Data/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/NewFXMain.java</file>
+            <file>file:/mnt/Data/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/HomeFXMLController.java</file>
+            <file>file:/mnt/Data/Studies/ESPRIT/2ndSem/PiDev/JavaSprint/SoukLemdinaJava/src/com/souklemdina/gui/HomeFXML.fxml</file>
         </group>
     </open-files>
 </project-private>

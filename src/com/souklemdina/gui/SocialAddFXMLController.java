@@ -7,6 +7,8 @@ package com.souklemdina.gui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -35,13 +37,18 @@ public class SocialAddFXMLController implements Initializable {
     private Button butImg;
     @FXML
     private Label labImg;
+    
+    @FXML
+            public void handle(ActionEvent e) {
+                System.out.println("accepted");
+            }
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+    }
 
-    }    
-    
 }
