@@ -33,6 +33,10 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private ImageView btn_user;
     @FXML
+    private ImageView btn_workshop;
+    @FXML
+    private AnchorPane anch_workshop;
+    @FXML
     private AnchorPane anch_profile;
     @FXML
     private AnchorPane anch_shop;
@@ -54,10 +58,6 @@ public class HomeFXMLController implements Initializable {
     private AnchorPane pan_local;
     @FXML
     private AnchorPane pan_user;
-    @FXML
-    private ImageView btn_workshop;
-    @FXML
-    private AnchorPane anch_workshop;
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
