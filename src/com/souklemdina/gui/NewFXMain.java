@@ -23,22 +23,25 @@ public class NewFXMain extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("LoginFXML.fxml"));
+//        stage.setTitle("Register & Login to Souk Lemdina");
+//        Parent root = FXMLLoader.load(getClass().getResource("BackFXML.fxml"));
+//        stage.setTitle("Gestion du Souk");
         Parent root = FXMLLoader.load(getClass().getResource("HomeFXML.fxml"));
+        stage.setTitle("Souk Lemdina App");
 
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
 
         stage.getIcons().add(new Image(getClass().getResourceAsStream("app.png")));
         stage.setScene(scene);
-        stage.setTitle("Souk Lemdina App");
         stage.show();
     }
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
         launch(args);
     }
 

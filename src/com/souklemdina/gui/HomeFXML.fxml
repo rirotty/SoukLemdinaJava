@@ -78,7 +78,7 @@
             <AnchorPane fx:id="pan_profile" prefHeight="555.0" prefWidth="908.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anch_shop" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;" visible="false">
+      <AnchorPane fx:id="anch_shop" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label layoutX="132.0" layoutY="242.0" text="BoutiqueAnchorPane">
                <font>
@@ -119,7 +119,7 @@
                   <Image url="@../../../ressources/img/icons/pointer.png" />
                </image>
             </ImageView>
-            <AnchorPane fx:id="pan_workspace" prefHeight="555.0" prefWidth="908.0" />
+            <AnchorPane fx:id="pan_workshop" prefHeight="555.0" prefWidth="908.0" />
          </children></AnchorPane>
       <AnchorPane fx:id="anch_local" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>

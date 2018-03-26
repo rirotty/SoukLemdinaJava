@@ -21,7 +21,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author rkader
  */
-public class HomeFXMLController implements Initializable {
+public class BackFXMLController implements Initializable {
 
     @FXML
     private ImageView btn_profile;
@@ -30,35 +30,48 @@ public class HomeFXMLController implements Initializable {
     @FXML
     private ImageView btn_event;
     @FXML
+    private ImageView btn_workshop;
+    @FXML
     private ImageView btn_local;
     @FXML
     private ImageView btn_user;
     @FXML
-    private ImageView btn_workshop;
-    @FXML
-    private AnchorPane anch_workshop;
-    @FXML
     private AnchorPane anch_profile;
-    @FXML
-    private AnchorPane anch_shop;
-    @FXML
-    private AnchorPane anch_event;
-    @FXML
-    private AnchorPane anch_local;
-    @FXML
-    private AnchorPane anch_user;
     @FXML
     private AnchorPane pan_profile;
     @FXML
+    private AnchorPane anch_shop;
+    @FXML
     private AnchorPane pan_shop;
+    @FXML
+    private AnchorPane anch_event;
     @FXML
     private AnchorPane pan_event;
     @FXML
+    private AnchorPane anch_workshop;
+    @FXML
     private AnchorPane pan_workshop;
+    @FXML
+    private AnchorPane anch_local;
     @FXML
     private AnchorPane pan_local;
     @FXML
+    private AnchorPane anch_user;
+    @FXML
     private AnchorPane pan_user;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        Tooltip.install(btn_event, new Tooltip("Gestion des Évènements"));
+        Tooltip.install(btn_workshop, new Tooltip("Gestion des Ateliers"));
+        Tooltip.install(btn_profile, new Tooltip("Gestion du Réseau Social"));
+        Tooltip.install(btn_local, new Tooltip("Gestion des Locaux"));
+        Tooltip.install(btn_shop, new Tooltip("Gestion de la Boutique En Ligne"));
+        Tooltip.install(btn_user, new Tooltip("Gestion des Utilisateurs"));
+    }    
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
@@ -108,18 +121,5 @@ public class HomeFXMLController implements Initializable {
             anch_user.setVisible(true);
         }
     }
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        Tooltip.install(btn_event, new Tooltip("Évènements"));
-        Tooltip.install(btn_workshop, new Tooltip("Ateliers"));
-        Tooltip.install(btn_profile, new Tooltip("Hdith Elsouk"));
-        Tooltip.install(btn_local, new Tooltip("Locaux"));
-        Tooltip.install(btn_shop, new Tooltip("Boutique En Ligne"));
-        Tooltip.install(btn_user, new Tooltip("Utilisateur"));
-    }
-
+    
 }

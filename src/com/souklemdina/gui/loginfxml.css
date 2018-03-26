@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.logo {
+    -fx-effect: dropshadow(three-pass-box, rgba(64,168,74,0.8), 10, 0, 0, 0);
+}

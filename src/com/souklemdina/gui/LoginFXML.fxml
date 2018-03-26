@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="446.0" style="-fx-background-color: #2E3436;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.LoginFXMLController">
+    <stylesheets>
+        <URL value="@loginfxml.css" />
+    </stylesheets>
+   <children>
+      <JFXTextField focusColor="#40a84a" layoutX="164.0" layoutY="287.0" promptText="Username" unFocusColor="#40a84a" />
+      <JFXTextField focusColor="#40a84a" layoutX="164.0" layoutY="330.0" promptText="Password" unFocusColor="#40a84a" />
+      <ImageView fitHeight="132.0" fitWidth="107.0" layoutX="170.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
+         <image>
+            <Image url="@../../../ressources/img/logos/app.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="129.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../ressources/img/icons/avatar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="129.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../ressources/img/icons/closed-lock.png" />
+         </image>
+      </ImageView>
+      <JFXCheckBox layoutX="120.0" layoutY="408.0" text="Remember Me" textFill="#40a84a" />
+      <JFXButton layoutX="274.0" layoutY="404.0" onMouseClicked="#handle" style="-fx-background-color: #40a84a;" text="Login" textFill="#e4e4e4" />
+      <Label layoutX="60.0" layoutY="505.0" text="All Rights Reserved by Souk Lemdina Inc.  |  info@souklemdina.tn" textFill="#40a84a">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="339.0" layoutY="23.0" style="-fx-background-color: #40a84a;" text="SignUp" textFill="#e4e4e4" />
+      <Label layoutX="321.0" layoutY="55.0" text="Not a member?" textFill="#e4e4e4" />
+      <JFXButton layoutX="55.0" layoutY="25.0" style="-fx-background-color: #40a84a;" text="Reset" textFill="#e4e4e4" />
+      <Label layoutX="25.0" layoutY="57.0" text="Forgot Password?" textFill="#e4e4e4" />
+   </children>
+</AnchorPane>
