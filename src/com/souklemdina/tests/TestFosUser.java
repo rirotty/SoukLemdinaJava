@@ -24,9 +24,6 @@ public class TestFosUser {
      Integer.SIZE, null);*/
     public static void main(String[] args) {
         FosUserServices es = new FosUserServices();
-        es.create(new FosUser(null, "hatem", "hatem", "hatem.abrouz@esprit.tn", "hatem.abrouz@esprit.tn",
-                true, "pass", null, new Date(18, 2, 15), null, null, null, "homme", "hatem", "ab", "20 mars",
-                new Integer(2074), "ben arous", "tunisie", "28596447", new Integer(0), new Date(94, 9, 15)));
         
         System.out.println("Avant delete ****************************");
         es.findAll().forEach(System.out::println);

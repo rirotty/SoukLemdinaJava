@@ -7,6 +7,8 @@ package com.souklemdina.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import javafx.scene.image.Image;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +23,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 /**
  *
@@ -30,20 +33,18 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "local")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Local.findAll", query = "SELECT l FROM Local l")
-    , @NamedQuery(name = "Local.findById", query = "SELECT l FROM Local l WHERE l.id = :id")
-    , @NamedQuery(name = "Local.findBySuperficie", query = "SELECT l FROM Local l WHERE l.superficie = :superficie")
-    , @NamedQuery(name = "Local.findByPrix", query = "SELECT l FROM Local l WHERE l.prix = :prix")
-    , @NamedQuery(name = "Local.findByType", query = "SELECT l FROM Local l WHERE l.type = :type")
-    , @NamedQuery(name = "Local.findByDescription", query = "SELECT l FROM Local l WHERE l.description = :description")
-    , @NamedQuery(name = "Local.findByNbSignal", query = "SELECT l FROM Local l WHERE l.nbSignal = :nbSignal")
-    , @NamedQuery(name = "Local.findByAdresse", query = "SELECT l FROM Local l WHERE l.adresse = :adresse")
-    , @NamedQuery(name = "Local.findByTelephone", query = "SELECT l FROM Local l WHERE l.telephone = :telephone")
-    , @NamedQuery(name = "Local.findByChoixPrix", query = "SELECT l FROM Local l WHERE l.choixPrix = :choixPrix")
-    , @NamedQuery(name = "Local.findByHeureDeb", query = "SELECT l FROM Local l WHERE l.heureDeb = :heureDeb")
-    , @NamedQuery(name = "Local.findByHeureFin", query = "SELECT l FROM Local l WHERE l.heureFin = :heureFin")
-    , @NamedQuery(name = "Local.findByTitre", query = "SELECT l FROM Local l WHERE l.titre = :titre")
-    , @NamedQuery(name = "Local.findByImage", query = "SELECT l FROM Local l WHERE l.image = :image")})
+    @NamedQuery(name = "Local.findAll", query = "SELECT l FROM Local l"),
+    @NamedQuery(name = "Local.findById", query = "SELECT l FROM Local l WHERE l.id = :id"),
+    @NamedQuery(name = "Local.findBySuperficie", query = "SELECT l FROM Local l WHERE l.superficie = :superficie"),
+    @NamedQuery(name = "Local.findByPrix", query = "SELECT l FROM Local l WHERE l.prix = :prix"),
+    @NamedQuery(name = "Local.findByType", query = "SELECT l FROM Local l WHERE l.type = :type"),
+    @NamedQuery(name = "Local.findByDescription", query = "SELECT l FROM Local l WHERE l.description = :description"),
+    @NamedQuery(name = "Local.findByAdresse", query = "SELECT l FROM Local l WHERE l.adresse = :adresse"),
+    @NamedQuery(name = "Local.findByTelephone", query = "SELECT l FROM Local l WHERE l.telephone = :telephone"),
+    @NamedQuery(name = "Local.findByTitre", query = "SELECT l FROM Local l WHERE l.titre = :titre"),
+    @NamedQuery(name = "Local.findByLocated", query = "SELECT l FROM Local l WHERE l.located = :located"),
+    @NamedQuery(name = "Local.findByNbSignal", query = "SELECT l FROM Local l WHERE l.nbSignal = :nbSignal"),
+    @NamedQuery(name = "Local.findByImage", query = "SELECT l FROM Local l WHERE l.image = :image")})
 public class Local implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -61,39 +62,39 @@ public class Local implements Serializable {
     private String type;
     @Column(name = "description")
     private String description;
-    @Column(name = "nbSignal")
-    private Integer nbSignal;
+ @Column(name = "image")
+    private String image;
     @Column(name = "adresse")
     private String adresse;
     @Column(name = "telephone")
     private String telephone;
-    @Column(name = "choixPrix")
-    private String choixPrix;
-    @Column(name = "heureDeb")
-    private Integer heureDeb;
-    @Column(name = "heureFin")
-    private Integer heureFin;
     @Column(name = "titre")
     private String titre;
-    @Basic(optional = false)
-    @Column(name = "image")
-    private String image;
+ @Column(name = "nbSignal")
+    private int nbSignal;
+    @Column(name = "located")
+    private Image located;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private int idUser;
     @OneToMany(mappedBy = "idLocal")
+   
     private List<Location> locationList;
 
     public Local() {
     }
 
-    public Local(Integer id) {
-        this.id = id;
+    public String getImage() {
+        return image;
     }
 
-    public Local(Integer id, String image) {
-        this.id = id;
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    
+    public Local(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {
@@ -102,6 +103,14 @@ public class Local implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public int getNbSignal() {
+        return nbSignal;
+    }
+
+    public void setNbSignal(int nbSignal) {
+        this.nbSignal = nbSignal;
     }
 
     public Double getSuperficie() {
@@ -120,6 +129,14 @@ public class Local implements Serializable {
         this.prix = prix;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.type = titre;
+    }
+
     public String getType() {
         return type;
     }
@@ -134,14 +151,6 @@ public class Local implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Integer getNbSignal() {
-        return nbSignal;
-    }
-
-    public void setNbSignal(Integer nbSignal) {
-        this.nbSignal = nbSignal;
     }
 
     public String getAdresse() {
@@ -160,51 +169,19 @@ public class Local implements Serializable {
         this.telephone = telephone;
     }
 
-    public String getChoixPrix() {
-        return choixPrix;
+    public Image getLocated() {
+        return located;
     }
 
-    public void setChoixPrix(String choixPrix) {
-        this.choixPrix = choixPrix;
+    public void setLocated(Image located) {
+        this.located = located;
     }
 
-    public Integer getHeureDeb() {
-        return heureDeb;
-    }
-
-    public void setHeureDeb(Integer heureDeb) {
-        this.heureDeb = heureDeb;
-    }
-
-    public Integer getHeureFin() {
-        return heureFin;
-    }
-
-    public void setHeureFin(Integer heureFin) {
-        this.heureFin = heureFin;
-    }
-
-    public String getTitre() {
-        return titre;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public FosUser getIdUser() {
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 
@@ -241,5 +218,46 @@ public class Local implements Serializable {
     public String toString() {
         return "com.souklemdina.entities.Local[ id=" + id + " ]";
     }
+
+    public Local(Integer id, Double superficie, Double prix, String type, String description, String adresse, String telephone) {
+        this.id = id;
+        this.superficie = superficie;
+        this.prix = prix;
+        this.type = type;
+        this.description = description;
+        this.adresse = adresse;
+        this.telephone = telephone;
+    }
+    public Local(Integer id, Double superficie, Double prix, String type, String description, String adresse, String telephone, String image) {
+        this.id = id;
+        this.superficie = superficie;
+        this.prix = prix;
+        this.type = type;
+        this.description = description;
+        this.adresse = adresse;
+        this.telephone = telephone;
+        this.image = image;
+    }
+
+    public Local(Integer id, Double superficie, Double prix, String type) {
+        this.id = id;
+        this.superficie = superficie;
+        this.prix = prix;
+        this.type = type;
+    }
     
+    
+    public Local(Integer id,Integer nbSignal, String type, String adresse, String telephone) {
+        this.id = id;
+        this.nbSignal=nbSignal;
+        this.type = type;
+        this.adresse = adresse;
+        this.telephone= telephone;
+                
+    }
+    public Local (Integer id,Integer nbSignal){
+        this.id = id;
+    this.nbSignal = nbSignal;
+    }
+
 }

@@ -6,6 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -79,7 +80,7 @@ public class Produit implements Serializable {
     @Basic(optional = false)
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+    private Timestamp updatedAt;
     @Basic(optional = false)
     @Column(name = "image")
     private String image;
@@ -87,7 +88,7 @@ public class Produit implements Serializable {
     private List<LigneDeCommande> ligneDeCommandeList;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
     @OneToMany(mappedBy = "idProduit")
     private List<LigneWishlist> ligneWishlistList;
 
@@ -98,7 +99,7 @@ public class Produit implements Serializable {
         this.id = id;
     }
 
-    public Produit(Integer id, String libelle, String description, int promotion, int nbSignal, String type, String categorie, double prix, Date updatedAt, String image) {
+    public Produit(Integer id, String libelle, String description, int promotion, int nbSignal, String type, String categorie, double prix, Timestamp updatedAt, String image) {
         this.id = id;
         this.libelle = libelle;
         this.description = description;
@@ -111,7 +112,7 @@ public class Produit implements Serializable {
         this.image = image;
     }
 
-    public Produit(Integer id, String libelle, String description, Integer quqntite, int promotion, String type, String categorie, double prix, Date updatedAt) {
+    public Produit(Integer id, String libelle, String description, Integer quqntite, int promotion, String type, String categorie, double prix, Timestamp updatedAt) {
         this.id = id;
         this.libelle = libelle;
         this.description = description;
@@ -122,6 +123,23 @@ public class Produit implements Serializable {
         this.prix = prix;
         this.updatedAt = updatedAt;
     }
+
+    public Produit(Integer id, String libelle, String description, Integer quqntite, int promotion, int nbSignal, String type, String categorie, double prix, Timestamp updatedAt, String image, Integer idUser) {
+        this.id = id;
+        this.libelle = libelle;
+        this.description = description;
+        this.quqntite = quqntite;
+        this.promotion = promotion;
+        this.nbSignal = nbSignal;
+        this.type = type;
+        this.categorie = categorie;
+        this.prix = prix;
+        this.updatedAt = updatedAt;
+        this.image = image;
+        this.idUser = idUser;
+    }
+    
+    
 
     
     
@@ -199,11 +217,11 @@ public class Produit implements Serializable {
         this.prix = prix;
     }
 
-    public Date getUpdatedAt() {
+    public Timestamp getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -224,11 +242,11 @@ public class Produit implements Serializable {
         this.ligneDeCommandeList = ligneDeCommandeList;
     }
 
-    public FosUser getIdUser() {
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 

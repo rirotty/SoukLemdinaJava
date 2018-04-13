@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #2E3436;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialProfileFXMLController">
+   <content>
+      <VBox fx:id="pane_vbox" prefWidth="890.0" style="-fx-background-color: #2E3436;">
+         <children>
+            <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="555.0" prefWidth="890.0" style="-fx-background-color: #2E3436;">
+               <children>
+                  <Circle fx:id="cir_profile" fill="#1f93ff00" layoutX="151.0" layoutY="100.0" radius="61.0" stroke="#b3b3b3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="1.5" />
+                  <Label fx:id="lab_name" layoutX="231.0" layoutY="37.0" text="Label" textFill="#e3e3e3">
+                     <font>
+                        <Font name="DejaVu Sans ExtraLight" size="38.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lab_tag" layoutX="234.0" layoutY="108.0" prefHeight="60.0" prefWidth="251.0" text="Label" textAlignment="JUSTIFY" textFill="#e3e3e3" wrapText="true" />
+                  <Line endX="100.0" layoutX="504.0" layoutY="117.0" rotate="90.0" scaleX="0.25" startX="-100.0" stroke="#e3e3e3" />
+                  <Label fx:id="lab_about" layoutX="526.0" layoutY="81.0" prefHeight="75.0" prefWidth="255.0" text="Label" textAlignment="JUSTIFY" textFill="#e3e3e3" wrapText="true" />
+                  <Label fx:id="lab_datenaiss" layoutX="234.0" layoutY="90.0" text="Label" textFill="#e3e3e3" />
+                  <Line endX="100.0" layoutX="302.0" layoutY="224.0" scaleX="1.4" startX="-100.0" stroke="#e3e3e3" />
+                  <Label layoutX="164.0" layoutY="250.0" text="Image:" textFill="#e3e3e3" />
+                  <JFXButton fx:id="btn_browse" layoutX="221.0" layoutY="245.0" onAction="#handleBrowseBtn" style="-fx-background-color: #40a84a;" text="Choisir" textFill="#e3e3e3" />
+                  <Label fx:id="lab_titre" layoutX="164.0" layoutY="285.0" text="Titre de la publication" textFill="#e3e3e3" />
+                  <TextField fx:id="txfTitre" layoutX="164.0" layoutY="309.0" prefHeight="26.0" prefWidth="278.0" />
+                  <Label fx:id="lab_texte" layoutX="164.0" layoutY="343.0" text="Ecrire Ici" textFill="#e3e3e3" />
+                  <TextArea fx:id="txarTexte" layoutX="164.0" layoutY="367.0" prefHeight="88.0" prefWidth="278.0" wrapText="true" />
+                  <Line endX="100.0" layoutX="303.0" layoutY="480.0" scaleX="1.4" startX="-100.0" stroke="#e3e3e3" />
+                  <Label layoutX="306.0" layoutY="250.0" text="Publication:" textFill="#e3e3e3" />
+                  <JFXButton fx:id="btn_save" layoutX="392.0" layoutY="245.0" onAction="#handleSaveBtn" style="-fx-background-color: #40a84a;" text="Save" textFill="#e3e3e3" />
+                  <ImageView fx:id="img_preview" fitHeight="260.0" fitWidth="260.0" layoutX="490.0" layoutY="223.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../ressources/img/gallery/noSelected.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

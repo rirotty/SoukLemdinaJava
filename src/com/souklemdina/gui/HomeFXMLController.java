@@ -5,9 +5,14 @@
  */
 package com.souklemdina.gui;
 
+import com.souklemdina.util.SessionUser;
+import com.souklemdina.util.data;
+import com.souklemdina.util.room;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +20,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
@@ -59,11 +65,13 @@ public class HomeFXMLController implements Initializable {
     private AnchorPane pan_local;
     @FXML
     private AnchorPane pan_user;
+    @FXML
+    private Pane pan_chat;
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
         if (event.getTarget() == btn_profile) {
-            AnchorPane p = FXMLLoader.load(getClass().getResource("SocialAddFXML.fxml"));
+            AnchorPane p = FXMLLoader.load(getClass().getResource("SocialFXML.fxml"));
             pan_profile.getChildren().setAll(p);
             anch_profile.setVisible(true);
             anch_shop.setVisible(false);
@@ -72,6 +80,8 @@ public class HomeFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_shop) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("AjoutPanier.fxml"));
+            pan_shop.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(true);
             anch_event.setVisible(false);
@@ -79,6 +89,8 @@ public class HomeFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_event) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("EventAffFXML.fxml"));
+            pan_event.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(true);
@@ -86,6 +98,8 @@ public class HomeFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_workshop) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("ListeWork.fxml"));
+            pan_workshop.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
@@ -93,6 +107,8 @@ public class HomeFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_local) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+            pan_local.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
@@ -100,6 +116,8 @@ public class HomeFXMLController implements Initializable {
             anch_local.setVisible(true);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_user) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("MoncompteFXML.fxml"));
+            pan_user.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
@@ -111,15 +129,37 @@ public class HomeFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        AnchorPane pa = new AnchorPane();
+        try {
+            pa = FXMLLoader.load(getClass().getResource("SocialFXML.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(HomeFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        pan_profile.getChildren().setAll(pa);
+        anch_profile.setVisible(true);
         Tooltip.install(btn_event, new Tooltip("Évènements"));
         Tooltip.install(btn_workshop, new Tooltip("Ateliers"));
         Tooltip.install(btn_profile, new Tooltip("Hdith Elsouk"));
         Tooltip.install(btn_local, new Tooltip("Locaux"));
         Tooltip.install(btn_shop, new Tooltip("Boutique En Ligne"));
         Tooltip.install(btn_user, new Tooltip("Utilisateur"));
+        data.ip = "localhost";
+        data.name = SessionUser.getUser().getFirstname() + " " + SessionUser.getUser().getLastname();
+        data.port = 10001;
+        Pane p;
+        try {
+            p = FXMLLoader.load(room.class.getResource("room.fxml"));
+            pan_chat.getChildren().add(p);
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+
     }
 
 }

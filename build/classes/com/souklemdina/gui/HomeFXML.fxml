@@ -5,20 +5,21 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #9CBDE1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.HomeFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1388.0" style="-fx-background-color: #9CBDE1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.HomeFXMLController">
     <stylesheets>
         <URL value="@homefxml.css" />
     </stylesheets>
    <children>
-      <AnchorPane layoutY="559.0" prefHeight="41.0" prefWidth="1005.0" style="-fx-background-color: #2E3436;">
+      <AnchorPane layoutY="559.0" prefHeight="41.0" prefWidth="1388.0" style="-fx-background-color: #2E3436;">
          <children>
-            <Label layoutX="285.0" layoutY="14.0" text="All Rights Reserved by Souk Lemdina Inc.  |  info@souklemdina.tn  |  +216-52-888-256" textFill="#b8b8b8">
+            <Label layoutX="495.0" layoutY="14.0" text="All Rights Reserved by Souk Lemdina Inc.  |  info@souklemdina.tn  |  +216-52-888-256" textFill="#b8b8b8">
                <font>
                   <Font size="11.0" />
                </font></Label>
-            <ImageView fitHeight="33.0" fitWidth="92.0" layoutX="899.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="33.0" fitWidth="92.0" layoutX="1279.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ressources/img/logos/esprit-onblack.png" />
                </image>
@@ -78,7 +79,7 @@
             <AnchorPane fx:id="pan_profile" prefHeight="555.0" prefWidth="908.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anch_shop" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane fx:id="anch_shop" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>
             <Label layoutX="132.0" layoutY="242.0" text="BoutiqueAnchorPane">
                <font>
@@ -123,7 +124,7 @@
          </children></AnchorPane>
       <AnchorPane fx:id="anch_local" layoutX="97.0" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>
-            <Label layoutX="205.0" layoutY="242.0" text="LocalAnchorPane">
+            <Label layoutX="205.0" layoutY="242.0" text="LocalAnchorPane" visible="false">
                <font>
                   <Font size="58.0" />
                </font>
@@ -149,5 +150,6 @@
             </ImageView>
             <AnchorPane fx:id="pan_user" prefHeight="555.0" prefWidth="908.0" />
          </children></AnchorPane>
+      <Pane fx:id="pan_chat" layoutX="1005.0" prefHeight="555.0" prefWidth="383.0" />
    </children>
 </AnchorPane>

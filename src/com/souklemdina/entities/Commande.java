@@ -56,7 +56,7 @@ public class Commande implements Serializable {
     private List<LigneDeCommande> ligneDeCommandeList;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
 
     public Commande() {
     }
@@ -69,6 +69,15 @@ public class Commande implements Serializable {
         this.id = id;
         this.dateCommande = dateCommande;
     }
+
+    public Commande(Integer id, Integer idUser, Date dateCommande, Date dateMax) {
+        this.id = id;
+        this.idUser = idUser;
+        this.dateCommande = dateCommande;
+        this.dateMax = dateMax;
+        
+    }
+    
 
     public Integer getId() {
         return id;
@@ -103,11 +112,11 @@ public class Commande implements Serializable {
         this.ligneDeCommandeList = ligneDeCommandeList;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 

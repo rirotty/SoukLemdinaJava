@@ -42,10 +42,16 @@ public class Wishlist implements Serializable {
     private Integer id;
     @JoinColumn(name = "idUser", referencedColumnName = "id")
     @OneToOne
-    private FosUser idUser;
+    private Integer idUser;
     @OneToMany(mappedBy = "idWishlist")
     private List<LigneWishlist> ligneWishlistList;
 
+    public Wishlist(Integer id, Integer idUser) {
+        this.id = id;
+        this.idUser = idUser;
+    }
+
+    
     public Wishlist() {
     }
 
@@ -61,11 +67,11 @@ public class Wishlist implements Serializable {
         this.id = id;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 

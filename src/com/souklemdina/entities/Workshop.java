@@ -6,7 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -68,11 +68,11 @@ public class Workshop implements Serializable {
     @Basic(optional = false)
     @Column(name = "dateDebut")
     @Temporal(TemporalType.DATE)
-    private Date dateDebut;
+    private Timestamp dateDebut;
     @Basic(optional = false)
     @Column(name = "dateFin")
     @Temporal(TemporalType.DATE)
-    private Date dateFin;
+    private Timestamp dateFin;
     @Basic(optional = false)
     @Column(name = "nbPlace")
     private int nbPlace;
@@ -93,12 +93,16 @@ public class Workshop implements Serializable {
     @Basic(optional = false)
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+    private Timestamp updatedAt;
+    @Column(name = "rating")
+    private Integer rating;
+    @Column(name = "nbrrating")
+    private Integer nbrrating;
     @OneToMany(mappedBy = "idWorkshop")
     private List<ParticipantWork> participantWorkList;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
 
     public Workshop() {
     }
@@ -107,7 +111,16 @@ public class Workshop implements Serializable {
         this.id = id;
     }
 
-    public Workshop(Integer id, String nomWorkshop, String adresse, String type, Date dateDebut, Date dateFin, int nbPlace, double prix, String description, Date updatedAt) {
+    public Workshop(Integer rating, Integer nbrrating) {
+        this.rating = rating;
+        this.nbrrating = nbrrating;
+    }
+
+    
+    
+    
+    
+    public Workshop(Integer id, String nomWorkshop, String adresse, String type, Timestamp dateDebut, Timestamp dateFin, int nbPlace, double prix, String description, String image, Timestamp updatedAt, Integer idUser) {
         this.id = id;
         this.nomWorkshop = nomWorkshop;
         this.adresse = adresse;
@@ -117,7 +130,38 @@ public class Workshop implements Serializable {
         this.nbPlace = nbPlace;
         this.prix = prix;
         this.description = description;
+        this.image = image;
         this.updatedAt = updatedAt;
+        this.idUser = idUser;
+    }
+
+    public Workshop(String nomWorkshop, String adresse, String type, Timestamp dateDebut, Timestamp dateFin,String image, Timestamp updatedAt, int nbPlace, double prix, String description) {
+        this.nomWorkshop = nomWorkshop;
+        this.adresse = adresse;
+        this.type = type;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.image = image;
+        this.updatedAt = updatedAt;
+        this.nbPlace = nbPlace;
+        this.prix = prix;
+        this.description = description;
+        
+    }
+
+    public Workshop(Integer id, String nomWorkshop, String adresse, String type, Timestamp dateDebut, Timestamp dateFin, String image, Timestamp updatedAt, int nbPlace, double prix, String description) {
+        this.id = id;
+        this.nomWorkshop = nomWorkshop;
+        this.adresse = adresse;
+        this.type = type;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.image = image;
+        this.updatedAt = updatedAt;
+        this.nbPlace = nbPlace;
+        this.prix = prix;
+        this.description = description;
+
     }
 
     public Integer getId() {
@@ -152,19 +196,19 @@ public class Workshop implements Serializable {
         this.type = type;
     }
 
-    public Date getDateDebut() {
+    public Timestamp getDateDebut() {
         return dateDebut;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(Timestamp dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public Date getDateFin() {
+    public Timestamp getDateFin() {
         return dateFin;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(Timestamp dateFin) {
         this.dateFin = dateFin;
     }
 
@@ -224,12 +268,27 @@ public class Workshop implements Serializable {
         this.image = image;
     }
 
-    public Date getUpdatedAt() {
+    public Timestamp getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
+    }
+       public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public Integer getNbrrating() {
+        return nbrrating;
+    }
+
+    public void setNbrrating(Integer nbrrating) {
+        this.nbrrating = nbrrating;
     }
 
     @XmlTransient
@@ -241,11 +300,11 @@ public class Workshop implements Serializable {
         this.participantWorkList = participantWorkList;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 
@@ -273,5 +332,5 @@ public class Workshop implements Serializable {
     public String toString() {
         return "com.souklemdina.entities.Workshop[ id=" + id + " ]";
     }
-    
+
 }

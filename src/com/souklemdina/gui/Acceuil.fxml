@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane id="AnchorPane" fx:id="anch_pane" prefHeight="555.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: #ffffff" fx:controller="com.souklemdina.gui.AcceuilController">
+   <children>
+      <JFXButton fx:id="btnAfficheM" layoutX="338.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleBoutonAfficheM" text="Mes Locaux" />
+      <JFXButton fx:id="btnAfficheV" layoutX="454.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleBoutonAfficheV" text="Souk El Locaux" />
+      <ImageView fitHeight="188.0" fitWidth="176.0" layoutX="369.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@app.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="454.0" layoutY="194.0" startX="-100.0" strokeWidth="0.5" />
+   </children>
+</AnchorPane>

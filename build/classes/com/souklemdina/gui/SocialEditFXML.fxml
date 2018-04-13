@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #2E3436;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialEditFXMLController">
+   <children>
+      <TextArea fx:id="txarAbout" layoutX="351.0" layoutY="354.0" prefHeight="90.0" prefWidth="200.0" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></TextArea>
+      <TextArea fx:id="txarTag" layoutX="352.0" layoutY="273.0" prefHeight="46.0" prefWidth="200.0" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font></TextArea>
+      <Label fx:id="labAbout" layoutX="351.0" layoutY="333.0" text="Parlez-nous de vous" textFill="#e3e3e3">
+         <font>
+            <Font name="Raleway" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="labTag" layoutX="352.0" layoutY="252.0" text="Slogan du profile" textFill="#e3e3e3">
+         <font>
+            <Font name="Raleway" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_erase" layoutX="136.0" layoutY="209.0" onAction="#handleEraseBtn" style="-fx-background-color: #40a84a;" text="Retirer l'image" textFill="#e3e3e3" />
+      <JFXButton fx:id="btn_browse" layoutX="664.0" layoutY="209.0" onAction="#handleBrowseBtn" style="-fx-background-color: #40a84a;" text="Choisir Image" textFill="#e3e3e3" />
+      <JFXButton fx:id="btn_reinit" layoutX="452.0" layoutY="209.0" onAction="#handleReinitBtn" style="-fx-background-color: #40a84a;" text="Réinitialiser" textFill="#e3e3e3" />
+      <JFXButton layoutX="354.0" layoutY="209.0" onAction="#handleSaveBtn" style="-fx-background-color: #40a84a;" text="Enregistrer" textFill="#e3e3e3" />
+      <Label layoutX="255.0" layoutY="123.0" text="CHANGER VOS DONNÉES DU PROFILE" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <ImageView fitHeight="190.0" fitWidth="190.0" layoutX="99.0" layoutY="253.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../ressources/img/icons/boss-1.png" />
+         </image></ImageView>
+      <Line endX="100.0" layoutX="194.0" layoutY="468.0" startX="-100.0" stroke="#40a84a" />
+      <Line endX="100.0" layoutX="450.0" layoutY="468.0" startX="-100.0" stroke="#40a84a" />
+      <Line endX="100.0" layoutX="720.0" layoutY="468.0" startX="-100.0" stroke="#40a84a" />
+      <Circle fx:id="cir" fill="#ff1f1f00" layoutX="718.0" layoutY="348.0" radius="100.0" stroke="#b3b3b3" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2.5" />
+   </children>
+</AnchorPane>

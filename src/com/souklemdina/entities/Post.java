@@ -6,7 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,7 +49,7 @@ public class Post implements Serializable {
     @Basic(optional = false)
     @Column(name = "date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
+    private Timestamp date;
     @Column(name = "texte")
     private String texte;
     @Basic(optional = false)
@@ -61,11 +61,10 @@ public class Post implements Serializable {
     private String image;
     @Basic(optional = false)
     @Column(name = "updated_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+    private Timestamp updatedAt;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
 
     public Post() {
     }
@@ -74,14 +73,14 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public Post(Integer id, Date date, String titre, Date updatedAt) {
+    public Post(Integer id, Timestamp date, String titre, Timestamp updatedAt) {
         this.id = id;
         this.date = date;
         this.titre = titre;
         this.updatedAt = updatedAt;
     }
 
-    public Post(Integer id, Date date, String texte, String titre, Integer nbSignal, String image, Date updatedAt, FosUser idUser) {
+    public Post(Integer id, Timestamp date, String texte, String titre, Integer nbSignal, String image, Timestamp updatedAt, Integer idUser) {
         this.id = id;
         this.date = date;
         this.texte = texte;
@@ -92,7 +91,17 @@ public class Post implements Serializable {
         this.idUser = idUser;
     }
     
-    public Post(Integer id, Date date, String texte, String titre, String image, Date updatedAt, FosUser idUser) {
+    public Post(Timestamp date, String texte, String titre, Integer nbSignal, String image, Timestamp updatedAt, Integer idUser) {
+        this.date = date;
+        this.texte = texte;
+        this.titre = titre;
+        this.nbSignal = nbSignal;
+        this.image = image;
+        this.updatedAt = updatedAt;
+        this.idUser = idUser;
+    }
+    
+    public Post(Integer id, Timestamp date, String texte, String titre, String image, Timestamp updatedAt, Integer idUser) {
         this.id = id;
         this.date = date;
         this.texte = texte;
@@ -110,11 +119,11 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 
@@ -150,19 +159,19 @@ public class Post implements Serializable {
         this.image = image;
     }
 
-    public Date getUpdatedAt() {
+    public Timestamp getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 

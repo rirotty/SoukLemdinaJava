@@ -6,7 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -23,7 +23,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -84,12 +83,12 @@ public class FosUser implements Serializable {
     private String password;
     @Column(name = "last_login")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date lastLogin;
+    private Timestamp lastLogin;
     @Column(name = "confirmation_token")
     private String confirmationToken;
     @Column(name = "password_requested_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date passwordRequestedAt;
+    private Timestamp passwordRequestedAt;
     @Basic(optional = false)
     @Lob
     @Column(name = "roles")
@@ -104,7 +103,7 @@ public class FosUser implements Serializable {
     @Column(name = "rue")
     private String rue;
     @Column(name = "zip_code")
-    private Integer zipCode;
+    private String zipCode;
     @Column(name = "ville")
     private String ville;
     @Column(name = "pays")
@@ -116,7 +115,7 @@ public class FosUser implements Serializable {
     @Basic(optional = false)
     @Column(name = "datenaiss")
     @Temporal(TemporalType.DATE)
-    private Date datenaiss;
+    private Timestamp datenaiss;
     @OneToMany(mappedBy = "idUser")
     private List<ParticipantWork> participantWorkList;
     @OneToMany(mappedBy = "idUser")
@@ -147,7 +146,37 @@ public class FosUser implements Serializable {
         this.id = id;
     }
 
-    public FosUser(Integer id, String username, String usernameCanonical, String email, String emailCanonical, boolean enabled, String password, String roles, Date datenaiss) {
+    public FosUser(Integer id, String firstname, String lastname) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    public FosUser(Integer id, String username, String usernameCanonical, String email, String emailCanonical, boolean enabled, String salt, String password, Timestamp lastLogin, String confirmationToken, Timestamp passwordRequestedAt, String roles, String gender, String firstname, String lastname, String rue, String zipCode, String ville, String pays, String phone, Integer nbsignal) {
+        this.id = id;
+        this.username = username;
+        this.usernameCanonical = usernameCanonical;
+        this.email = email;
+        this.emailCanonical = emailCanonical;
+        this.enabled = enabled;
+        this.salt = salt;
+        this.password = password;
+        this.lastLogin = lastLogin;
+        this.confirmationToken = confirmationToken;
+        this.passwordRequestedAt = passwordRequestedAt;
+        this.roles = roles;
+        this.gender = gender;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.rue = rue;
+        this.zipCode = zipCode;
+        this.ville = ville;
+        this.pays = pays;
+        this.phone = phone;
+        this.nbsignal = nbsignal;
+    }
+
+    public FosUser(Integer id, String username, String usernameCanonical, String email, String emailCanonical, boolean enabled, String password, String roles, Timestamp datenaiss) {
         this.id = id;
         this.username = username;
         this.usernameCanonical = usernameCanonical;
@@ -159,7 +188,7 @@ public class FosUser implements Serializable {
         this.datenaiss = datenaiss;
     }
 
-    public FosUser(Integer id, String username, String usernameCanonical, String email, String emailCanonical, boolean enabled, String salt, String password, Date lastLogin, String confirmationToken, Date passwordRequestedAt, String roles, String gender, String firstname, String lastname, String rue, Integer zipCode, String ville, String pays, String phone, Integer nbsignal, Date datenaiss) {
+    public FosUser(Integer id, String username, String usernameCanonical, String email, String emailCanonical, boolean enabled, String salt, String password, Timestamp lastLogin, String confirmationToken, Timestamp passwordRequestedAt, String roles, String gender, String firstname, String lastname, String rue, String zipCode, String ville, String pays, String phone, Integer nbsignal, Timestamp datenaiss) {
         this.id = id;
         this.username = username;
         this.usernameCanonical = usernameCanonical;
@@ -182,11 +211,9 @@ public class FosUser implements Serializable {
         this.phone = phone;
         this.nbsignal = nbsignal;
         this.datenaiss = datenaiss;
-        
+
     }
 
-    
-    
     public Integer getId() {
         return id;
     }
@@ -251,11 +278,11 @@ public class FosUser implements Serializable {
         this.password = password;
     }
 
-    public Date getLastLogin() {
+    public Timestamp getLastLogin() {
         return lastLogin;
     }
 
-    public void setLastLogin(Date lastLogin) {
+    public void setLastLogin(Timestamp lastLogin) {
         this.lastLogin = lastLogin;
     }
 
@@ -267,11 +294,11 @@ public class FosUser implements Serializable {
         this.confirmationToken = confirmationToken;
     }
 
-    public Date getPasswordRequestedAt() {
+    public Timestamp getPasswordRequestedAt() {
         return passwordRequestedAt;
     }
 
-    public void setPasswordRequestedAt(Date passwordRequestedAt) {
+    public void setPasswordRequestedAt(Timestamp passwordRequestedAt) {
         this.passwordRequestedAt = passwordRequestedAt;
     }
 
@@ -315,11 +342,11 @@ public class FosUser implements Serializable {
         this.rue = rue;
     }
 
-    public Integer getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(Integer zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 
@@ -355,109 +382,12 @@ public class FosUser implements Serializable {
         this.nbsignal = nbsignal;
     }
 
-    public Date getDatenaiss() {
+    public Timestamp getDatenaiss() {
         return datenaiss;
     }
 
-    public void setDatenaiss(Date datenaiss) {
+    public void setDatenaiss(Timestamp datenaiss) {
         this.datenaiss = datenaiss;
-    }
-
-    @XmlTransient
-    public List<ParticipantWork> getParticipantWorkList() {
-        return participantWorkList;
-    }
-
-    public void setParticipantWorkList(List<ParticipantWork> participantWorkList) {
-        this.participantWorkList = participantWorkList;
-    }
-
-    @XmlTransient
-    public List<Produit> getProduitList() {
-        return produitList;
-    }
-
-    public void setProduitList(List<Produit> produitList) {
-        this.produitList = produitList;
-    }
-
-    public Wishlist getWishlist() {
-        return wishlist;
-    }
-
-    public void setWishlist(Wishlist wishlist) {
-        this.wishlist = wishlist;
-    }
-
-    @XmlTransient
-    public List<Workshop> getWorkshopList() {
-        return workshopList;
-    }
-
-    public void setWorkshopList(List<Workshop> workshopList) {
-        this.workshopList = workshopList;
-    }
-
-    public Profile getProfile() {
-        return profile;
-    }
-
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
-
-    @XmlTransient
-    public List<Commande> getCommandeList() {
-        return commandeList;
-    }
-
-    public void setCommandeList(List<Commande> commandeList) {
-        this.commandeList = commandeList;
-    }
-
-    @XmlTransient
-    public List<Local> getLocalList() {
-        return localList;
-    }
-
-    public void setLocalList(List<Local> localList) {
-        this.localList = localList;
-    }
-
-    @XmlTransient
-    public List<Post> getPostList() {
-        return postList;
-    }
-
-    public void setPostList(List<Post> postList) {
-        this.postList = postList;
-    }
-
-    @XmlTransient
-    public List<Location> getLocationList() {
-        return locationList;
-    }
-
-    public void setLocationList(List<Location> locationList) {
-        this.locationList = locationList;
-    }
-
-    @XmlTransient
-    public List<Evenement> getEvenementList() {
-        return evenementList;
-    }
-
-    public void setEvenementList(List<Evenement> evenementList) {
-        this.evenementList = evenementList;
-    }
-
-    @XmlTransient
-    public List<ParticipantEvents> getParticipantEventsList() {
-        return participantEventsList;
-    }
-
-    public void setParticipantEventsList(List<ParticipantEvents> participantEventsList) {
-        this.participantEventsList = participantEventsList;
     }
 
     @Override
@@ -484,5 +414,5 @@ public class FosUser implements Serializable {
     public String toString() {
         return "com.souklemdina.entities.FosUser[ id=" + id + " ]";
     }
-    
+
 }

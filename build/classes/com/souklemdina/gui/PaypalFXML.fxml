@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" fx:id="anch_pane" prefHeight="555.0" prefWidth="908.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.PaypalFXMLController">
+    <stylesheets>
+        <URL value="@paypalfxml.css" />
+    </stylesheets>
+   <children>
+      <WebView fx:id="wbv" layoutY="1.0" onMouseClicked="#getUrl" prefHeight="555.0" prefWidth="908.0" />
+   </children>
+</AnchorPane>

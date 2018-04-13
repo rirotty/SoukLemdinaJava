@@ -6,7 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -52,7 +52,7 @@ public class Profile implements Serializable {
     @Basic(optional = false)
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+    private Timestamp updatedAt;
     @Basic(optional = false)
     @Column(name = "about_me")
     private String aboutMe;
@@ -62,29 +62,31 @@ public class Profile implements Serializable {
 
     public Profile() {
     }
-
-    public Profile(Integer id) {
-        this.id = id;
-    }
     
-    public Profile(Integer id, Integer idUser) {
-        this.id = id;
+    public Profile(Integer idUser) {
         this.idUser = idUser;
     }
     
-    public Profile(Integer id, String tagline, Date updatedAt, String aboutMe) {
+    public Profile(Integer id, String tagline, Timestamp updatedAt, String aboutMe) {
         this.id = id;
         this.tagline = tagline;
         this.updatedAt = updatedAt;
         this.aboutMe = aboutMe;
     }
     
-    public Profile(Integer id, String tagline, String image, Date updatedAt, String aboutMe, Integer idUser){
+    public Profile(Integer id, String tagline, String image, Timestamp updatedAt, String aboutMe, Integer idUser){
         this.id = id;
         this.idUser = idUser;
         this.tagline = tagline;
         this.image = image;
         this.updatedAt = updatedAt;
+        this.aboutMe = aboutMe;
+    }
+    
+    //Constructor for creation on add:
+    public Profile(String tagline, String aboutMe, Integer idUser){
+        this.idUser = idUser;
+        this.tagline = tagline;
         this.aboutMe = aboutMe;
     }
 
@@ -112,11 +114,11 @@ public class Profile implements Serializable {
         this.image = image;
     }
 
-    public Date getUpdatedAt() {
+    public Timestamp getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
     }
 

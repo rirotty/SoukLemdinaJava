@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #2E3436;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialHomeFXMLController">
+    <content>
+      <VBox fx:id="pane_vbox" prefWidth="890.0" style="-fx-background-color: #2E3436;">
+         <children>
+            <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="395.0" prefWidth="890.0" style="-fx-background-color: #2E3436;">
+               <children>
+                  <Label layoutX="164.0" layoutY="140.0" text="Image:" textFill="#e3e3e3" />
+                  <JFXButton fx:id="btn_browse" layoutX="221.0" layoutY="135.0" onAction="#handleBrowseBtn" style="-fx-background-color: #40a84a;" text="Choisir" textFill="#e3e3e3" />
+                  <Label fx:id="lab_titre" layoutX="164.0" layoutY="175.0" text="Titre de la publication" textFill="#e3e3e3" />
+                  <TextField fx:id="txfTitre" layoutX="164.0" layoutY="199.0" prefHeight="26.0" prefWidth="278.0" />
+                  <Label fx:id="lab_texte" layoutX="164.0" layoutY="233.0" text="Ecrire Ici" textFill="#e3e3e3" />
+                  <TextArea fx:id="txarTexte" layoutX="164.0" layoutY="257.0" prefHeight="88.0" prefWidth="278.0" wrapText="true" />
+                  <Line endX="100.0" layoutX="303.0" layoutY="370.0" scaleX="1.4" startX="-100.0" stroke="#e3e3e3" />
+                  <Label layoutX="306.0" layoutY="140.0" text="Publication:" textFill="#e3e3e3" />
+                  <JFXButton fx:id="btn_save" layoutX="392.0" layoutY="135.0" onAction="#handleSaveBtn" style="-fx-background-color: #40a84a;" text="Save" textFill="#e3e3e3" />
+                  <ImageView fx:id="img_preview" fitHeight="260.0" fitWidth="260.0" layoutX="490.0" layoutY="113.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../ressources/img/gallery/noSelected.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="326.0" layoutY="41.0" prefHeight="40.0" prefWidth="248.0" text="HDITH ELSOUK" textFill="WHITE">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

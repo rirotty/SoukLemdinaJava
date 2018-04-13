@@ -16,6 +16,10 @@ public interface IProduitService {
         public void create(Produit p);
 
     public List<Produit> findAll();
+    
+    public List<Produit> findByIdUser(Integer idUser);
+    
+    public Produit findById(Integer id);
 
     public void update(Produit p);
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.ProduitAddController">
+   <content>
+      <AnchorPane id="AnchorPane">
+         <children>
+            <SplitPane fx:id="main" dividerPositions="0.29797979797979796" prefHeight="619.0" prefWidth="907.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <AnchorPane fx:id="mainleft" minHeight="0.0" minWidth="368.0" style="-fx-background-color: #f9f9f9; -fx-padding: 20;">
+                     <children>
+                        <Text fill="#40a84a" layoutX="80.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30px;" text="Gérer Mes Produits" textAlignment="CENTER">
+                           <font>
+                              <Font name="Champagne &amp; Limousines Bold" size="32.0" />
+                           </font>
+                        </Text>
+                        <ComboBox id="ctype" fx:id="ctype" layoutX="105.0" layoutY="319.0" prefWidth="150.0" promptText="Choisir un type..." />
+                        <ComboBox id="ccategorie" fx:id="ccategorie" layoutX="105.0" layoutY="354.0" prefWidth="150.0" promptText="Choisir une catégorie..." />
+                        <Button fx:id="btn_ajout" contentDisplay="CENTER" layoutX="19.0" layoutY="450.0" mnemonicParsing="false" onAction="#AjoutProduit" prefWidth="150.0" style="-fx-background-color: #40a84a; -fx-font-size: 16; -fx-text-fill: #FFF;" text="Ajouter" />
+                        <Button fx:id="btn_modif" contentDisplay="CENTER" layoutX="187.0" layoutY="448.0" mnemonicParsing="false" onAction="#ModifProduit" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #40a84a; -fx-font-size: 16; -fx-text-fill: #FFF;" text="Modifier" />
+                        <Button fx:id="btn_sup" contentDisplay="CENTER" layoutX="97.0" layoutY="494.0" mnemonicParsing="false" onAction="#SuppProduit" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #40a84a; -fx-font-size: 16; -fx-text-fill: #FFF;" text="Supprimer" />
+                        <JFXTextField fx:id="tflibelle" alignment="CENTER" focusColor="#41a649" labelFloat="true" layoutX="90.0" layoutY="63.0" onMouseExited="#ValLib" promptText="Taper libelle" stylesheets="@loginfxml.css" unFocusColor="#41a649">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="tfquantite" alignment="CENTER" focusColor="#40a84a" labelFloat="true" layoutX="90.0" layoutY="167.0" onMouseExited="#ValQuan" promptText="Taper quantité" stylesheets="@loginfxml.css" unFocusColor="#40a84a">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="tfpromotion" alignment="CENTER" focusColor="#40a84a" labelFloat="true" layoutX="90.0" layoutY="218.0" onMouseExited="#ValProm" promptText="\% de promotion" stylesheets="@loginfxml.css" unFocusColor="#40a84a">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="tfprix" alignment="CENTER" focusColor="#40a84a" labelFloat="true" layoutX="90.0" layoutY="265.0" onMouseExited="#ValPrix" promptText="Taper un prix" stylesheets="@loginfxml.css" unFocusColor="#40a84a">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="tfdescription" alignment="CENTER" focusColor="#41a649" labelFloat="true" layoutX="90.0" layoutY="117.0" onMouseExited="#ValDesc" promptText="Taper description" stylesheets="@loginfxml.css" unFocusColor="#41a649">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="btn_img" layoutX="119.0" layoutY="388.0" onAction="#selectPhoto" prefHeight="36.0" prefWidth="111.0" style="-fx-background-color: #ececec;" text="Choisir Image" textFill="#40a84a" />
+                        <Label fx:id="testLib" layoutX="285.0" layoutY="79.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="testdesc" layoutX="282.0" layoutY="131.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="testqant" layoutX="282.0" layoutY="194.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="testprom" layoutX="281.0" layoutY="241.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="testprix" layoutX="280.0" layoutY="289.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="testValid" layoutX="155.0" layoutY="428.0" textFill="RED" />
+                        <FontAwesomeIconView fill="#40a84a" glyphName="PLUS" layoutX="37.0" layoutY="41.0" size="30" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="mainright" minHeight="0.0" minWidth="0.0" style="-fx-padding: 20; -fx-background-color: #f9f9f9;">
+                     <children>
+                        <TableView fx:id="prod_tbl" layoutX="75.0" layoutY="72.0" style="-fx-padding: 5;" />
+                        <Text fill="#40a84a" layoutX="188.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30px;" text="Mes produits" textAlignment="CENTER">
+                           <font>
+                              <Font name="Champagne &amp; Limousines Bold" size="32.0" />
+                           </font>
+                        </Text>
+                        <FontAwesomeIconView fill="#40a84a" glyphName="SUITCASE" layoutX="133.0" layoutY="44.0" size="40" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

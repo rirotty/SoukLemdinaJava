@@ -16,9 +16,13 @@ public interface IWorkshopServices {
 
     public void create(Workshop w);
 
-    public List<Workshop> findAll();
+    public List<Workshop> aff();
 
     public void update(Workshop w);
 
     public void delete(Workshop w);
+    
+        public Workshop findbyid(int id);
+
+
 }

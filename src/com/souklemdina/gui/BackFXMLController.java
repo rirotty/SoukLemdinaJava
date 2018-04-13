@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -71,12 +72,12 @@ public class BackFXMLController implements Initializable {
         Tooltip.install(btn_local, new Tooltip("Gestion des Locaux"));
         Tooltip.install(btn_shop, new Tooltip("Gestion de la Boutique En Ligne"));
         Tooltip.install(btn_user, new Tooltip("Gestion des Utilisateurs"));
-    }    
+    }
 
     @FXML
     private void handleButtonAction(MouseEvent event) throws IOException {
         if (event.getTarget() == btn_profile) {
-            AnchorPane p = FXMLLoader.load(getClass().getResource("SocialAddFXML.fxml"));
+            ScrollPane p = FXMLLoader.load(getClass().getResource("SocialBackFXML.fxml"));
             pan_profile.getChildren().setAll(p);
             anch_profile.setVisible(true);
             anch_shop.setVisible(false);
@@ -92,6 +93,8 @@ public class BackFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_event) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("EventStat.fxml"));
+            pan_event.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(true);
@@ -99,6 +102,8 @@ public class BackFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_workshop) {
+            ScrollPane p = FXMLLoader.load(getClass().getResource("StatistiquesWork.fxml"));
+            pan_workshop.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
@@ -106,6 +111,8 @@ public class BackFXMLController implements Initializable {
             anch_local.setVisible(false);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_local) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("BackLocal.fxml"));
+            pan_local.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
@@ -113,6 +120,8 @@ public class BackFXMLController implements Initializable {
             anch_local.setVisible(true);
             anch_user.setVisible(false);
         } else if (event.getTarget() == btn_user) {
+            AnchorPane p = FXMLLoader.load(getClass().getResource("AdminUserFXML.fxml"));
+            pan_user.getChildren().setAll(p);
             anch_profile.setVisible(false);
             anch_shop.setVisible(false);
             anch_event.setVisible(false);
@@ -121,5 +130,5 @@ public class BackFXMLController implements Initializable {
             anch_user.setVisible(true);
         }
     }
-    
+
 }

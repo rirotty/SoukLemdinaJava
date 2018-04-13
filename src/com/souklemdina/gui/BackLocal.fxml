@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anch_pane" prefHeight="471.0" prefWidth="701.0" style="-fx-background-color: #575555;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.BackLocalController">
+   <children>
+      <Label layoutX="267.0" layoutY="41.0" text="Locaux ElSouk " textAlignment="CENTER" textFill="#c9c8c8">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableLocal" layoutX="21.0" layoutY="97.0" onSort="#repererSignal" prefHeight="200.0" prefWidth="443.0">
+         <columns>
+            <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="colAdresse" minWidth="0.0" prefWidth="130.0" text="Adresse" />
+            <TableColumn fx:id="colTelephone" minWidth="2.0" prefWidth="102.0" text="Téléphone" />
+            <TableColumn fx:id="colSignal" prefWidth="82.0" text="Nb Signal" />
+            <TableColumn fx:id="colId" prefWidth="53.0" text="Id" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="163.0" layoutX="517.0" layoutY="129.0" pickOnBounds="true" />
+      <JFXButton layoutX="288.0" layoutY="383.0" onAction="#handleBoutonSupprimer" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #b2abab;" text="Supprimer" />
+      <JFXTextField fx:id="recherche" focusColor="#02006e" layoutX="50.0" layoutY="315.0" prefHeight="25.0" prefWidth="295.0" promptText="Tapez ici pour effectuer une recherche" style="-fx-prompt-text-fill: #c9c8c8; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+   </children>
+</AnchorPane>

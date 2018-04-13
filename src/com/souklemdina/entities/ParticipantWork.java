@@ -39,10 +39,10 @@ public class ParticipantWork implements Serializable {
     private Integer id;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
     @JoinColumn(name = "id_workshop", referencedColumnName = "id")
     @ManyToOne
-    private Workshop idWorkshop;
+    private Integer idWorkshop;
 
     public ParticipantWork() {
     }
@@ -59,19 +59,19 @@ public class ParticipantWork implements Serializable {
         this.id = id;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 
-    public Workshop getIdWorkshop() {
+    public Integer getIdWorkshop() {
         return idWorkshop;
     }
 
-    public void setIdWorkshop(Workshop idWorkshop) {
+    public void setIdWorkshop(Integer idWorkshop) {
         this.idWorkshop = idWorkshop;
     }
 

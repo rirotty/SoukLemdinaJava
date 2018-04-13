@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="908.0" style="-fx-background: #2E3436;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialSearchFXMLController">
+   <content>
+      <VBox fx:id="pane_vbox" prefWidth="890.0" style="-fx-background-color: #2E3436;">
+         <children>
+            <AnchorPane fx:id="pane" prefHeight="91.0" prefWidth="890.0">
+               <children>
+                  <TextField fx:id="txf_seek" layoutX="231.0" layoutY="33.0" prefHeight="26.0" prefWidth="325.0" />
+                  <JFXButton fx:id="btn_seek" layoutX="573.0" layoutY="33.0" style="-fx-background-color: #40a84a;" text="Rechercher" textFill="#e3e3e3" />
+               </children>
+            </AnchorPane>
+         </children></VBox>
+   </content>
+</ScrollPane>

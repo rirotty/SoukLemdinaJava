@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="page" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.ProduitsViewFXMLController">
+   <children>
+      <TableView fx:id="tbl_prod" layoutX="50.0" layoutY="131.0" />
+      <Label layoutX="202.0" layoutY="12.0" prefHeight="80.0" prefWidth="300.0" text="El Souk" textFill="#40a84a">
+         <font>
+            <Font size="73.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="790.0" layoutY="31.0" onAction="#SearchAction" prefWidth="100.0" stylesheets="@loginfxml.css" text="Valider" textFill="#40a84a">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtSearch" focusColor="#40a84a" layoutX="545.0" layoutY="31.0" promptText="Chercher un produit" stylesheets="@loginfxml.css" unFocusColor="#40a84a">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <FontAwesomeIconView fill="#40a84a" glyphName="SHOPPING_CART" layoutX="126.0" layoutY="87.0" size="60" />
+      <Button layoutX="14.0" layoutY="63.0" mnemonicParsing="false" onAction="#MaBoutiqueAction" text="Ma Boutique" textFill="#40a84a">
+         <graphic>
+            <FontAwesomeIconView fill="#40a84a" glyphName="PLUS" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

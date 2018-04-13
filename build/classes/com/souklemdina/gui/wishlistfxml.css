@@ -1,0 +1,23 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+/*.table-view {
+  -fx-table-cell-border-color: transparent;
+}*/
+.column-header-background { visibility: hidden; -fx-padding: -1em; }
+.table-row-cell:odd:filled{
+    -fx-background-color: white;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.table-view {
+  -fx-border-color: white;
+  -fx-table-cell-border-color: transparent;
+}

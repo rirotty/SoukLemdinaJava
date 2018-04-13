@@ -39,10 +39,10 @@ public class ParticipantEvents implements Serializable {
     private Integer id;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
     @JoinColumn(name = "id_evenement", referencedColumnName = "id")
     @ManyToOne
-    private Evenement idEvenement;
+    private Integer idEvenement;
 
     public ParticipantEvents() {
     }
@@ -59,19 +59,19 @@ public class ParticipantEvents implements Serializable {
         this.id = id;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 
-    public Evenement getIdEvenement() {
+    public Integer getIdEvenement() {
         return idEvenement;
     }
 
-    public void setIdEvenement(Evenement idEvenement) {
+    public void setIdEvenement(Integer idEvenement) {
         this.idEvenement = idEvenement;
     }
 

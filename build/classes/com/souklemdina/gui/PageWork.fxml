@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.lynden.gmapsfx.GoogleMapView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" fx:id="anc" prefHeight="555.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.PageWorkController">
+   <children>
+      <VBox fx:id="V1" alignment="TOP_CENTER" prefHeight="503.0" prefWidth="900.0">
+         <children>
+            <Pane prefHeight="34.0" prefWidth="709.0">
+               <children>
+                  <Label fx:id="nomWork" prefHeight="0.0" prefWidth="913.0" style="-fx-background-color: Transparent;" text="                                                                                                                                                                                                                ">
+                     <graphic>
+                        <Label fx:id="rating" />
+                     </graphic>
+                  </Label>
+                  <Rating fx:id="r1" layoutX="710.0" layoutY="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="38.0" prefWidth="165.0" />
+                  <Separator layoutY="3.0" prefWidth="908.0" />
+               </children>
+            </Pane>
+            <HBox fx:id="v" prefHeight="20.0" prefWidth="900.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox prefHeight="38.0" prefWidth="307.0">
+                     <children>
+                        <Button fx:id="participer" alignment="TOP_CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Participer" textFill="#c25912">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                           <cursor>
+                              <Cursor fx:constant="SW_RESIZE" />
+                           </cursor>
+                        </Separator>
+                        <Button fx:id="signaler" alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: trasparent;" text="Signaler" textFill="#c25912">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="list" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#goTolista" prefHeight="29.0" prefWidth="176.0" style="-fx-background-color: trasparent;" text="Liste Participants" textFill="#c25912">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <ImageView fx:id="ii" fitHeight="27.0" fitWidth="40.0" onMouseClicked="#goToli" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ressources/img/icons/back-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Separator prefHeight="13.0" prefWidth="900.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Separator>
+            <HBox fx:id="h1" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="149.0" style="-fx-background-color: #e8b78cab;" text="Venez pour decouvrir tout! " textFill="#369e9e">
+                     <font>
+                        <Font name="Comic Sans MS" size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imageW" fitHeight="196.0" fitWidth="341.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" />
+                  <Separator orientation="VERTICAL" prefHeight="134.0" prefWidth="15.0" />
+                  <VBox prefHeight="134.0" prefWidth="291.0">
+                     <children>
+                        <Label lineSpacing="3.0" text="Description" textAlignment="CENTER" textFill="#c25912" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../ressources/img/icons/descripIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="desc" text="Label" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="h2" prefHeight="206.0" prefWidth="900.0">
+               <children>
+                  <VBox prefHeight="199.0" prefWidth="318.0">
+                     <children>
+                        <Label lineSpacing="3.0" prefHeight="31.0" prefWidth="165.0" text="     Adresse" textFill="#c25912">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../ressources/img/icons/localisIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <GoogleMapView fx:id="addresse" prefHeight="182.0" prefWidth="141.0" />
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="294.0" prefWidth="13.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="f" lineSpacing="3.0" prefHeight="28.0" prefWidth="236.0" text="A propos du Formateur" textFill="#c25912">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../ressources/img/icons/proposicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="nomForm" text="Label" />
+                        <Label fx:id="email" text="Label" />
+                        <Label fx:id="phone" text="Label" />
+                        <ImageView fx:id="photoForm" fitHeight="150.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <VBox prefHeight="199.0" prefWidth="227.0">
+                     <children>
+                        <Label lineSpacing="3.0" prefHeight="32.0" prefWidth="165.0" text="      Infos Utils:" textFill="#c25912">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="34.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../ressources/img/icons/infoicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <Label text="Type :" textFill="#5aaec3">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ty" text="Label" />
+                        <Label text="Date début :" textFill="#5aaec3">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="deb" text="Label" />
+                        <Label text="Date fin :" textFill="#5aaec3">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="fin" text="Label" />
+                        <Label text="Prix :" textFill="#5aaec3">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prix" text="Label" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

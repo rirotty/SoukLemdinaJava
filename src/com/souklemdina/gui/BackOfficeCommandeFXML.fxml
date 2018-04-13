@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="ancp" prefHeight="555.0" prefWidth="908.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.BackOfficeCommandeFXMLController">
+    <stylesheets>
+        <URL value="@backofficecommandefxml.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tblView" layoutX="53.0" layoutY="44.0" onMouseClicked="#getLigne" prefHeight="426.0" prefWidth="792.0" />
+   </children>
+</AnchorPane>

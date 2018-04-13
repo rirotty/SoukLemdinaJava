@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.HiddenSidesPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #9CBDE1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialFXMLController">
+    <stylesheets>
+        <URL value="@socialfxml.css" />
+    </stylesheets>
+   <children>
+      <HiddenSidesPane fx:id="pan_hidden" prefHeight="555.0" prefWidth="908.0" />
+      <AnchorPane fx:id="anch_content" prefHeight="555.0" prefWidth="908.0">
+         <children>
+            <AnchorPane fx:id="pan_home" prefHeight="555.0" prefWidth="908.0" />
+            <AnchorPane fx:id="pan_search" prefHeight="555.0" prefWidth="908.0" visible="false" />
+            <AnchorPane fx:id="pan_profile" prefHeight="555.0" prefWidth="908.0" visible="false" />
+            <AnchorPane fx:id="pan_edit" prefHeight="555.0" prefWidth="908.0" visible="false" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="bar_browse" prefHeight="46.0" prefWidth="908.0">
+         <children>
+            <JFXButton fx:id="btn_home" layoutX="190.0" layoutY="8.0" onMouseClicked="#handleButtonAction" onMousePressed="#handleButtonAction" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: #40a84a;" styleClass="btn" text="Accueil" textFill="#e3e3e3" />
+            <JFXButton fx:id="btn_search" layoutX="322.0" layoutY="8.0" onMouseClicked="#handleButtonAction" onMousePressed="#handleButtonAction" prefHeight="30.0" prefWidth="138.0" style="-fx-background-color: #40a84a;" styleClass="btn" text="Trouver quelqu'un" textFill="#e3e3e3" />
+            <JFXButton fx:id="btn_profile" layoutX="466.0" layoutY="8.0" onMouseClicked="#handleButtonAction" onMousePressed="#handleButtonAction" prefHeight="30.0" prefWidth="84.0" style="-fx-background-color: #40a84a;" styleClass="btn" text="Mon Profil" textFill="#e3e3e3" />
+            <JFXButton fx:id="btn_edit" layoutX="556.0" layoutY="8.0" onMouseClicked="#handleButtonAction" onMousePressed="#handleButtonAction" prefHeight="30.0" prefWidth="162.0" style="-fx-background-color: #40a84a;" styleClass="btn" text="Modifier votre profile" textFill="#e3e3e3" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

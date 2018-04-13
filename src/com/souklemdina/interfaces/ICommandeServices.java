@@ -6,6 +6,7 @@
 package com.souklemdina.interfaces;
 
 import com.souklemdina.entities.Commande;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 public interface ICommandeServices {
      public void create(Commande c);
 
-    public List<Commande> findAll();
+    public ArrayList<Commande> findAll(Integer u);
 
     public void update(Commande c);
 

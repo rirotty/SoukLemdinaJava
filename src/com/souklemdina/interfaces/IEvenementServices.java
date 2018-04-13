@@ -16,9 +16,14 @@ public interface IEvenementServices {
 
     public void create(Evenement e);
 
-    public List<Evenement> findAll();
+   // public List<Evenement> findAll();
+    public List<Evenement> afficherev();
 
     public void update(Evenement e);
 
-    public void delete(Evenement e);
+    public void delete(int id);
+    public Evenement FindEvenement(int id);
+    //public Double MoyRat(int id);
+    public boolean EventHasNote(Evenement ev);
 }
+

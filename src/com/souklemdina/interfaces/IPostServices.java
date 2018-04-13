@@ -21,4 +21,18 @@ public interface IPostServices {
     public void update(Post p);
 
     public void delete(Post p);
+    
+    public void signaler(Post p);
+    
+    public void unSignaler(Post p);
+    
+    public List<Post> getSignal();
+    
+    public void deleteById(Integer id);
+    
+    public List<Post> findByIdUser(Integer idUser);
+    
+    public Post findById(Integer id);
+    
+    public List<Post> findAllFollowed(Integer idProfileFollower, Integer idUserFollower);
 }

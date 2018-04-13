@@ -1,36 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #333;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialAddFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="446.0" style="-fx-background-color: #fafaf5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.SocialAddFXMLController">
    <children>
-      <ImageView fx:id="logo" fitHeight="91.0" fitWidth="81.0" layoutX="402.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="118.0" fitWidth="98.0" layoutX="89.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../ressources/img/logos/app.png" />
-         </image></ImageView>
-      <TextArea fx:id="txarAbout" layoutX="349.0" layoutY="359.0" prefHeight="90.0" prefWidth="200.0" />
-      <TextArea fx:id="txarTag" layoutX="350.0" layoutY="284.0" prefHeight="46.0" prefWidth="200.0" />
-      <Label fx:id="labAbout" layoutX="349.0" layoutY="338.0" text="Parlez-nous de vous" textFill="WHITE">
+         </image>
+      </ImageView>
+      <Label layoutX="129.0" layoutY="17.0" text="Bienvenue à Souk Lemdina">
          <font>
-            <Font name="Raleway" size="12.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="labTag" layoutX="350.0" layoutY="264.0" text="Slogan Du Profile" textFill="WHITE">
+      <Label fx:id="labTag" layoutX="74.0" layoutY="263.0" text="Créer un slogan pour votre profile">
          <font>
-            <Font name="Raleway" size="12.0" />
+            <Font size="12.0" />
          </font>
       </Label>
-      <Button fx:id="butImg" layoutX="498.0" layoutY="229.0" mnemonicParsing="false" onAction="#handle" text="Button" />
-      <Label fx:id="labImg" layoutX="350.0" layoutY="234.0" text="Image du profile" textFill="WHITE">
+      <TextArea fx:id="txarTag" layoutX="74.0" layoutY="286.0" prefHeight="63.0" prefWidth="299.0" wrapText="true" />
+      <TextArea fx:id="txarAbout" layoutX="74.0" layoutY="382.0" prefHeight="108.0" prefWidth="299.0" wrapText="true" />
+      <Label fx:id="labAbout" layoutX="75.0" layoutY="358.0" text="Parlez-nous de vous en quelques mots">
          <font>
-            <Font name="Raleway" size="12.0" />
+            <Font size="12.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btn_browse" layoutX="307.0" layoutY="182.0" onAction="#handleBrowseButton" style="-fx-background-color: b3b3b3;" text="Choisir" textFill="WHITE" />
+      <Label layoutX="74.0" layoutY="188.0" text="Choisir une image de profile">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_reinit" layoutX="110.0" layoutY="499.0" onAction="#handleReinitButton" style="-fx-background-color: #b3b3b3;" text="Reinitialiser" textFill="WHITE" />
+      <JFXButton fx:id="btn_save" layoutX="246.0" layoutY="499.0" onAction="#handleSaveButton" style="-fx-background-color: #b3b3b3;" text="Enregistrer" textFill="WHITE" />
+      <Line endX="100.0" layoutX="217.0" layoutY="108.0" rotate="90.0" scaleX="0.4" startX="-100.0" />
+      <Circle fx:id="img" fill="#1f93ff00" layoutX="308.0" layoutY="111.0" radius="57.0" stroke="#b3b3b0" strokeLineJoin="ROUND" strokeType="INSIDE" />
+      <Label layoutX="75.0" layoutY="228.0" text="Date de naissance">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="daten" layoutX="226.0" layoutY="222.0" prefHeight="26.0" prefWidth="146.0" />
    </children>
 </AnchorPane>

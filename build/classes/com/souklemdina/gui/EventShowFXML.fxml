@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" fx:id="anchp" prefHeight="555.0" prefWidth="908.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.EventShowFXMLController">
+    <stylesheets>
+        <URL value="@eventshowfxml.css" />
+    </stylesheets>
+   <children>
+      <Pane prefHeight="98.0" prefWidth="908.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="nom" prefHeight="98.0" prefWidth="908.0" style="-fx-background-color: white;" />
+         </children>
+      </Pane>
+      <HBox fx:id="sh" layoutX="-1.0" layoutY="98.0" prefHeight="61.0" prefWidth="908.0" style="-fx-background-color: #696969;" />
+      <HBox fx:id="sh1" alignment="CENTER" layoutY="159.0" prefHeight="339.0" prefWidth="908.0" style="-fx-background-color: white;" />
+      <HBox fx:id="sh2" layoutY="498.0" prefHeight="68.0" prefWidth="908.0" style="-fx-background-color: #696969;" />
+   </children>
+</AnchorPane>

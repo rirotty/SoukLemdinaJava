@@ -73,10 +73,10 @@ public class LigneDeCommande implements Serializable {
     private String numTel;
     @JoinColumn(name = "id_commande", referencedColumnName = "id")
     @ManyToOne
-    private Commande idCommande;
+    private Integer idCommande;
     @JoinColumn(name = "id_produit", referencedColumnName = "id")
     @ManyToOne
-    private Produit idProduit;
+    private Integer idProduit;
 
     public LigneDeCommande() {
     }
@@ -90,6 +90,22 @@ public class LigneDeCommande implements Serializable {
         this.prixTotal = prixTotal;
         this.dateLivraison = dateLivraison;
         this.adresse = adresse;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.numTel = numTel;
+    }
+
+    public LigneDeCommande(Integer id,  Integer idProduit,Integer idCommande,double prixTotal, Integer quntite, Date dateLivraison, String adresse, String adresse2, String ville, int codePostal, String numTel) {
+        this.id = id;
+                this.idProduit = idProduit;
+        this.idCommande = idCommande;
+
+        this.quntite = quntite;
+        this.dateLivraison = dateLivraison;
+                this.prixTotal = prixTotal;
+
+        this.adresse = adresse;
+        this.adresse2 = adresse2;
         this.ville = ville;
         this.codePostal = codePostal;
         this.numTel = numTel;
@@ -167,19 +183,19 @@ public class LigneDeCommande implements Serializable {
         this.numTel = numTel;
     }
 
-    public Commande getIdCommande() {
+    public Integer getIdCommande() {
         return idCommande;
     }
 
-    public void setIdCommande(Commande idCommande) {
+    public void setIdCommande(Integer idCommande) {
         this.idCommande = idCommande;
     }
 
-    public Produit getIdProduit() {
+    public Integer getIdProduit() {
         return idProduit;
     }
 
-    public void setIdProduit(Produit idProduit) {
+    public void setIdProduit(Integer idProduit) {
         this.idProduit = idProduit;
     }
 

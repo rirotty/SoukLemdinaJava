@@ -6,7 +6,10 @@
 package com.souklemdina.interfaces;
 
 import com.souklemdina.entities.Location;
+
+import java.util.Date;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,11 +17,14 @@ import java.util.List;
  */
 public interface ILocationServices {
 
-    public void create(Location l);
+    public void ajoutLocation(Location l);
 
-    public List<Location> findAll();
+    public ObservableList<Location> afficherLocation(int id);
 
-    public void update(Location l);
+    public ObservableList<Location> afficherTout(int id);
 
-    public void delete(Location l);
+    public ObservableList<Location> afficherLocationUser(int id);
+
+    public void supprimerLocation(int id);
+
 }

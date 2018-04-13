@@ -39,12 +39,18 @@ public class LigneWishlist implements Serializable {
     private Integer id;
     @JoinColumn(name = "idProduit", referencedColumnName = "id")
     @ManyToOne
-    private Produit idProduit;
+    private Integer idProduit;
     @JoinColumn(name = "idWishlist", referencedColumnName = "id")
     @ManyToOne
-    private Wishlist idWishlist;
+    private Integer idWishlist;
 
     public LigneWishlist() {
+    }
+
+    public LigneWishlist(Integer id, Integer idProduit, Integer idWishlist) {
+        this.id = id;
+        this.idProduit = idProduit;
+        this.idWishlist = idWishlist;
     }
 
     public LigneWishlist(Integer id) {
@@ -59,19 +65,19 @@ public class LigneWishlist implements Serializable {
         this.id = id;
     }
 
-    public Produit getIdProduit() {
+    public Integer getIdProduit() {
         return idProduit;
     }
 
-    public void setIdProduit(Produit idProduit) {
+    public void setIdProduit(Integer idProduit) {
         this.idProduit = idProduit;
     }
 
-    public Wishlist getIdWishlist() {
+    public Integer getIdWishlist() {
         return idWishlist;
     }
 
-    public void setIdWishlist(Wishlist idWishlist) {
+    public void setIdWishlist(Integer idWishlist) {
         this.idWishlist = idWishlist;
     }
 

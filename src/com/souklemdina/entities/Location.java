@@ -5,6 +5,7 @@
  */
 package com.souklemdina.entities;
 
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -33,7 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Location.findAll", query = "SELECT l FROM Location l")
     , @NamedQuery(name = "Location.findById", query = "SELECT l FROM Location l WHERE l.id = :id")
     , @NamedQuery(name = "Location.findByDateDebutLocation", query = "SELECT l FROM Location l WHERE l.dateDebutLocation = :dateDebutLocation")
-    , @NamedQuery(name = "Location.findByDateFinLocatiom", query = "SELECT l FROM Location l WHERE l.dateFinLocatiom = :dateFinLocatiom")})
+    , @NamedQuery(name = "Location.findByDateFinLocation", query = "SELECT l FROM Location l WHERE l.dateFinLocatiom = :dateFinLocatiom")})
 public class Location implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -45,17 +46,17 @@ public class Location implements Serializable {
     @Basic(optional = false)
     @Column(name = "dateDebutLocation")
     @Temporal(TemporalType.DATE)
-    private Date dateDebutLocation;
+    private Date dateDebut;
     @Basic(optional = false)
     @Column(name = "dateFinLocatiom")
     @Temporal(TemporalType.DATE)
-    private Date dateFinLocatiom;
+    private Date dateFin;
     @JoinColumn(name = "id_local", referencedColumnName = "id")
     @ManyToOne
-    private Local idLocal;
+    private int idLocal;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private int idUser;
 
     public Location() {
     }
@@ -64,10 +65,10 @@ public class Location implements Serializable {
         this.id = id;
     }
 
-    public Location(Integer id, Date dateDebutLocation, Date dateFinLocatiom) {
+    public Location(Integer idUser, Date dateDebut, Date dateFin) {
         this.id = id;
-        this.dateDebutLocation = dateDebutLocation;
-        this.dateFinLocatiom = dateFinLocatiom;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
     }
 
     public Integer getId() {
@@ -78,35 +79,35 @@ public class Location implements Serializable {
         this.id = id;
     }
 
-    public Date getDateDebutLocation() {
-        return dateDebutLocation;
+    public Date getDateDebut() {
+        return dateDebut;
     }
 
-    public void setDateDebutLocation(Date dateDebutLocation) {
-        this.dateDebutLocation = dateDebutLocation;
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
     }
 
-    public Date getDateFinLocatiom() {
-        return dateFinLocatiom;
+    public Date getDateFin() {
+        return dateFin;
     }
 
-    public void setDateFinLocatiom(Date dateFinLocatiom) {
-        this.dateFinLocatiom = dateFinLocatiom;
+    public void setDateFin(Date dateFin) {
+        this.dateFin= dateFin;
     }
 
-    public Local getIdLocal() {
+    public int getIdLocal() {
         return idLocal;
     }
 
-    public void setIdLocal(Local idLocal) {
+    public void setIdLocal(int idLocal) {
         this.idLocal = idLocal;
     }
 
-    public FosUser getIdUser() {
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 
@@ -134,5 +135,31 @@ public class Location implements Serializable {
     public String toString() {
         return "com.souklemdina.entities.Location[ id=" + id + " ]";
     }
+
+    public Location(int id, Date dateDebut, Date dateFin) {
+        this.id=id;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        
+    }
+     public Location( Date dateDebut, Date dateFin) {
+        
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        
+    }
+       public Location(int id,Date dateDebut, Date dateFin, int idLocal) {
+     this.id=id;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.idLocal = idLocal;
+        
+        
+    }
+
+    public java.sql.Date getSuperficie() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }

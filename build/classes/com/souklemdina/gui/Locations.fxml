@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anch_pane" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #2e1402;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.MesLocationsController">
+   <children>
+      <AnchorPane layoutX="18.0" layoutY="16.0" prefHeight="523.0" prefWidth="874.0" style="-fx-background-color: #9C2B27;">
+         <children>
+            <TableView fx:id="tableLocal" layoutX="82.0" layoutY="113.0" prefHeight="200.0" prefWidth="129.0" style="-fx-background-color: #E45652;">
+              <columns>
+                <TableColumn fx:id="colLocal" prefWidth="128.0" text="Local" />
+              </columns>
+            </TableView>
+            <JFXButton layoutX="409.0" layoutY="432.0" onAction="#handleBoutonSupprimer" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #E45652;" text="Supprimer" textFill="#c9c8c8" />
+            <JFXButton layoutX="574.0" layoutY="432.0" onAction="#handleBoutonRetour" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #E45652;" text="Retour" textFill="#c9c8c8" />
+            <JFXButton layoutX="193.0" layoutY="434.0" onAction="#handleBoutonDetails" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #E45652;" text="Afficher détails" textFill="#c9c8c8" />
+            <Label layoutX="305.0" layoutY="225.0" text="Type:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="300.0" layoutY="279.0" text="Adresse:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="299.0" layoutY="334.0" text="Téléphone:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="type" editable="false" focusColor="#2e1402" layoutX="436.0" layoutY="226.0" prefHeight="25.0" prefWidth="149.0" style="-fx-prompt-text-fill: #c9c8c8; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="adresse" editable="false" focusColor="#2e1402" layoutX="440.0" layoutY="276.0" prefHeight="25.0" prefWidth="149.0" style="-fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="telephone" editable="false" focusColor="#2e1402" layoutX="439.0" layoutY="328.0" prefHeight="25.0" prefWidth="149.0" style="-fx-text-inner-color: #d7d1d1; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <Label layoutX="301.0" layoutY="114.0" text="Date Début:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="300.0" layoutY="168.0" text="Date Fin:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="dteDeb" editable="false" focusColor="#2e1402" layoutX="437.0" layoutY="118.0" prefHeight="25.0" prefWidth="149.0" style="-fx-prompt-text-fill: #c9c8c8; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="dteFin" editable="false" focusColor="#2e1402" layoutX="435.0" layoutY="175.0" prefHeight="25.0" prefWidth="149.0" style="-fx-prompt-text-fill: #c9c8c8; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="404.0" layoutY="33.0" text="Mes Locations" textFill="#c9c8c8">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

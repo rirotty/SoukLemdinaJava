@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="701.0" style="-fx-background: #2E3436;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.souklemdina.gui.SocialBackFXMLController">
+    <content>
+        
+    </content>
+   <content>
+      <VBox fx:id="pane_vbox" prefHeight="471.0" prefWidth="683.0" />
+   </content>
+</ScrollPane>

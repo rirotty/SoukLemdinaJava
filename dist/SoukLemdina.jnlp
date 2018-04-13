@@ -8,12 +8,63 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SoukLemdina.jar" size="1612261" download="eager" />
+    <jar href="SoukLemdina.jar" size="8882140" download="eager" />
+    <jar href="lib/GMapsFX-2.0.9.jar" size="166541" download="eager" />
+    <jar href="lib/GMapsFX-2.10.0.jar" size="183132" download="eager" />
+    <jar href="lib/apache-mime4j-0.3.jar" size="178126" download="eager" />
+    <jar href="lib/byte-buddy-1.7.9.jar" size="2924116" download="eager" />
+    <jar href="lib/client-combined-3.11.0-sources.jar" size="490970" download="eager" />
+    <jar href="lib/client-combined-3.11.0.jar" size="1461623" download="eager" />
+    <jar href="lib/commons-codec-1.10.jar" size="284184" download="eager" />
+    <jar href="lib/commons-exec-1.3.jar" size="54423" download="eager" />
+    <jar href="lib/commons-io-1.4.jar" size="275220" download="eager" />
+    <jar href="lib/commons-logging-1.1.1-1.0.0.jar" size="64334" download="eager" />
+    <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib/controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib/controlsfx-samples-8.40.14.jar" size="725707" download="eager" />
     <jar href="lib/eclipselink.jar" size="8478776" download="eager" />
+    <jar href="lib/facebook4j-core-2.4.10.jar" size="533890" download="eager" />
+    <jar href="lib/fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib/fxsampler-1.0.10.jar" size="30882" download="eager" />
+    <jar href="lib/gson-2.2.1.jar" size="189617" download="eager" />
+    <jar href="lib/gson-2.8.2.jar" size="232932" download="eager" />
+    <jar href="lib/guava-23.6-jre.jar" size="2708016" download="eager" />
+    <jar href="lib/httpclient-4.1-alpha1.jar" size="314558" download="eager" />
+    <jar href="lib/httpclient-4.5.3.jar" size="747794" download="eager" />
+    <jar href="lib/httpcore-4.1-alpha1.jar" size="176040" download="eager" />
+    <jar href="lib/httpcore-4.4.6.jar" size="323824" download="eager" />
+    <jar href="lib/httpmime-4.0-alpha4.jar" size="21991" download="eager" />
+    <jar href="lib/itextpdf-5.5.1.jar" size="2135213" download="eager" />
+    <jar href="lib/java-mail-1.4.4.jar" size="494975" download="eager" />
     <jar href="lib/javax.persistence_2.1.0.v201304241213.jar" size="164637" download="eager" />
+    <jar href="lib/javax.servlet.jar" size="132002" download="eager" />
+    <jar href="lib/jcl-over-slf4j-1.7.25.jar" size="16515" download="eager" />
     <jar href="lib/jfoenix-0.0.0-SNAPSHOT.jar" size="2461714" download="eager" />
+    <jar href="lib/jfoenix-8.0.1-retrolambda.jar" size="2450673" download="eager" />
+    <jar href="lib/jfoenix-8.0.1.jar" size="2405715" download="eager" />
+    <jar href="lib/jfoenix-9.0.3.jar" size="2176080" download="eager" />
+    <jar href="lib/json_simple-1.1.jar" size="16046" download="eager" />
+    <jar href="lib/jul-to-slf4j-1.7.25.jar" size="4596" download="eager" />
+    <jar href="lib/log4j-over-slf4j-1.7.25.jar" size="23645" download="eager" />
+    <jar href="lib/mail.jar" size="521052" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib/okhttp-3.9.1.jar" size="406252" download="eager" />
+    <jar href="lib/okio-1.13.0.jar" size="81811" download="eager" />
     <jar href="lib/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" size="1366247" download="eager" />
+    <jar href="lib/org.json.jar" size="48796" download="eager" />
+    <jar href="lib/osgi-over-slf4j-1.7.25.jar" size="5478" download="eager" />
+    <jar href="lib/rest-api-1.14.0.jar" size="261" download="eager" />
+    <jar href="lib/rest-api-sdk-1.14.0-javadoc.jar" size="876993" download="eager" />
+    <jar href="lib/rest-api-sdk-1.14.0.jar" size="344182" download="eager" />
+    <jar href="lib/restfb-1.18.0.jar" size="264745" download="eager" />
+    <jar href="lib/restfb-2.0.0.jar" size="1162918" download="eager" />
+    <jar href="lib/slf4j-api-1.7.25.jar" size="41203" download="eager" />
+    <jar href="lib/slf4j-api-1.7.7.jar" size="29257" download="eager" />
+    <jar href="lib/slf4j-ext-1.7.25.jar" size="42377" download="eager" />
+    <jar href="lib/slf4j-jdk14-1.7.25.jar" size="8460" download="eager" />
+    <jar href="lib/slf4j-migrator-1.7.25.jar" size="28664" download="eager" />
+    <jar href="lib/twilio-7.17.7.jar" size="2801356" download="eager" />
+    <jar href="lib/twilio-7.8.0.jar" size="1268794" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="SoukLemdina" >
     <param name="requiredFXVersion" value="8.0+"/>

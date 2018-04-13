@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anch_pane" prefHeight="555.0" prefWidth="908.0" style="-fx-background-color: #2e1402;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.AjoutLocalController">
+     <children>
+      <AnchorPane layoutX="11.0" layoutY="13.0" prefHeight="531.0" prefWidth="882.0" style="-fx-background-color: #9C2B27;">
+         <children>
+            <JFXComboBox fx:id="type" focusColor="#2e1402" layoutX="130.0" layoutY="125.0" prefHeight="25.0" prefWidth="206.0" promptText="Type" style="-fx-prompt-text-fill: #9e9999; -fx-background-color: #E45652;" unFocusColor="#d7d1d1" />
+            <JFXTextArea fx:id="description" focusColor="#2e1402" layoutX="129.0" layoutY="179.0" prefHeight="25.0" prefWidth="213.0" promptText="Desccription" style="-fx-prompt-text-fill: #9e9999; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="superficie" focusColor="#2e1402" layoutX="130.0" layoutY="251.0" prefHeight="25.0" prefWidth="213.0" promptText="Superficie" style="-fx-prompt-text-fill: #9e9999; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="prix" focusColor="#2e1402" layoutX="130.0" layoutY="312.0" prefHeight="25.0" prefWidth="213.0" promptText="Prix" style="-fx-prompt-text-fill: #9e9999; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="adresse" focusColor="#2e1402" layoutX="555.0" layoutY="125.0" onKeyTyped="#fromOnKeyTypedEvent" prefHeight="25.0" prefWidth="213.0" promptText="Adresse" style="-fx-prompt-text-fill: #9e9999; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <JFXTextField fx:id="telephone" focusColor="#2e1402" layoutX="558.0" layoutY="185.0" prefHeight="25.0" prefWidth="213.0" promptText="Téléphone" style="-fx-prompt-text-fill: #9e9999; -fx-text-fill: #d0cccc;" unFocusColor="#d7d1d1" />
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="158.0" layoutX="585.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton buttonType="RAISED" layoutX="470.0" layoutY="339.0" onAction="#handleBrowser" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #E45652;" text="Parcourrir" textFill="#c9c8c8" />
+            <JFXButton layoutX="269.0" layoutY="470.0" onAction="#AjoutLocal" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #E45652;" text="Ajouter" textFill="#c9c8c8" />
+            <JFXButton layoutX="491.0" layoutY="471.0" onAction="#handleBoutonRetour" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #E45652;" text="Retour" textFill="#c9c8c8" />
+            <Label layoutX="336.0" layoutY="45.0" text="Ajout Local" textAlignment="CENTER" textFill="#c9c8c8">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="err_description" layoutX="130.0" layoutY="215.0" textFill="#d0cbcb" />
+            <Label fx:id="err_superficie" layoutX="130.0" layoutY="279.0" textFill="#d0cbcb" />
+            <Label fx:id="err_prix" layoutX="130.0" layoutY="343.0" textFill="#d0cbcb" />
+            <Label fx:id="err_adresse" layoutX="558.0" layoutY="150.0" textFill="#d0cbcb" />
+            <Label fx:id="err_telephone" layoutX="561.0" layoutY="210.0" textFill="#d0cbcb" />
+            <Label fx:id="nbr" layoutX="130.0" layoutY="296.0" textFill="#d0cbcb" />
+            <Label fx:id="nbr1" layoutX="130.0" layoutY="363.0" textFill="#d0cbcb" />
+            <Label fx:id="tel" layoutX="558.0" layoutY="228.0" textFill="#d0cbcb" />
+            <Label layoutX="29.0" layoutY="141.0" text="Type:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="27.0" layoutY="195.0" text="Description:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="255.0" text="Superficie:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="315.0" text="Prix:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="467.0" layoutY="132.0" text="Adresse:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="462.0" layoutY="189.0" text="Téléphone:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="470.0" layoutY="296.0" text="Photo:" textFill="#d0cccc">
+               <font>
+                  <Font name="Lucida Bright Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

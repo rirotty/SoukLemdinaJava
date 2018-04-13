@@ -6,6 +6,7 @@
 package com.souklemdina.entities;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -62,12 +63,12 @@ public class Evenement implements Serializable {
     private String nomEvenement;
     @Basic(optional = false)
     @Column(name = "dateDebut")
-    @Temporal(TemporalType.DATE)
-    private Date dateDebut;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp dateDebut;
     @Basic(optional = false)
     @Column(name = "dateFin")
-    @Temporal(TemporalType.DATE)
-    private Date dateFin;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp dateFin;
     @Basic(optional = false)
     @Column(name = "adresse")
     private String adresse;
@@ -87,8 +88,8 @@ public class Evenement implements Serializable {
     private String type;
     @Basic(optional = false)
     @Column(name = "heure")
-    @Temporal(TemporalType.TIME)
-    private Date heure;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp heure;
     @Column(name = "photo")
     private String photo;
     @Column(name = "rating")
@@ -99,7 +100,7 @@ public class Evenement implements Serializable {
     private Integer nbruser;
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne
-    private FosUser idUser;
+    private Integer idUser;
     @OneToMany(mappedBy = "idEvenement")
     private List<ParticipantEvents> participantEventsList;
 
@@ -110,7 +111,18 @@ public class Evenement implements Serializable {
         this.id = id;
     }
 
-    public Evenement(Integer id, String nomEvenement, Date dateDebut, Date dateFin, String adresse, double prix, String description, int nbPlace, String type, Date heure) {
+    public Evenement(Integer id, Integer id_user, Integer nbruser, Integer nbrrating, Integer rating) {
+        this.id = id;
+        this.idUser = id_user;
+        this.nbruser = nbruser;
+        this.rating = rating;
+        this.nbrrating = nbrrating;
+        this.nbruser = nbruser;
+    }
+
+    public Evenement(Integer id, String nomEvenement, Timestamp dateDebut, Timestamp dateFin, String adresse, double prix, String description, int nbPlace, String type,
+            Timestamp heure, String photo
+    ) {
         this.id = id;
         this.nomEvenement = nomEvenement;
         this.dateDebut = dateDebut;
@@ -118,6 +130,19 @@ public class Evenement implements Serializable {
         this.adresse = adresse;
         this.prix = prix;
         this.description = description;
+        this.nbPlace = nbPlace;
+        this.type = type;
+        this.heure = heure;
+        this.photo = photo;
+    }
+
+    public Evenement(Integer id, String nomEvenement, Timestamp dateDebut, Timestamp dateFin, String adresse, double prix, int nbPlace, String type, Timestamp heure) {
+        this.id = id;
+        this.nomEvenement = nomEvenement;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.adresse = adresse;
+        this.prix = prix;
         this.nbPlace = nbPlace;
         this.type = type;
         this.heure = heure;
@@ -139,19 +164,19 @@ public class Evenement implements Serializable {
         this.nomEvenement = nomEvenement;
     }
 
-    public Date getDateDebut() {
+    public Timestamp getDateDebut() {
         return dateDebut;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(Timestamp dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public Date getDateFin() {
+    public Timestamp getDateFin() {
         return dateFin;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(Timestamp dateFin) {
         this.dateFin = dateFin;
     }
 
@@ -203,11 +228,11 @@ public class Evenement implements Serializable {
         this.type = type;
     }
 
-    public Date getHeure() {
+    public Timestamp getHeure() {
         return heure;
     }
 
-    public void setHeure(Date heure) {
+    public void setHeure(Timestamp heure) {
         this.heure = heure;
     }
 
@@ -243,11 +268,11 @@ public class Evenement implements Serializable {
         this.nbruser = nbruser;
     }
 
-    public FosUser getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(FosUser idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 
@@ -284,5 +309,5 @@ public class Evenement implements Serializable {
     public String toString() {
         return "com.souklemdina.entities.Evenement[ id=" + id + " ]";
     }
-    
+
 }

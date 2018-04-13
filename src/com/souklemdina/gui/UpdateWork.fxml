@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anxc" prefHeight="555.0" prefWidth="908.0" style="-fx-background-image: url( &quot;../../../ressources/img/gallery/Image2.jpg&quot;);" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.souklemdina.gui.UpdateWorkController">
+   <children>
+      <ImageView fitHeight="415.0" fitWidth="860.0" layoutX="33.0" layoutY="67.0" opacity="0.76" pickOnBounds="true">
+         <image>
+            <Image url="@../../../ressources/img/gallery/Image2.jpg" />
+         </image>
+      </ImageView>
+      <Label graphicTextGap="50.0" layoutX="128.0" layoutY="123.0" lineSpacing="12.0" text="Nom Workshop" textAlignment="CENTER" textFill="#07d7aa" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="156.0" layoutY="160.0" text="Adresse" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="166.0" layoutY="196.0" text="Type" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="508.0" layoutY="121.0" text="Date debut" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="525.0" layoutY="157.0" text="Date fin" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="132.0" layoutY="233.0" text="Nbre de place" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="551.0" layoutY="194.0" text="Prix" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="288.0" text="Description" textFill="#07d7aa">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="description" layoutX="284.0" layoutY="324.0" prefHeight="80.0" prefWidth="483.0" />
+      <TextField fx:id="nom" layoutX="263.0" layoutY="121.0" />
+      <TextField fx:id="nbrePlace" layoutX="264.0" layoutY="233.0" />
+      <TextField fx:id="prix" layoutX="618.0" layoutY="194.0" />
+      <DatePicker fx:id="dateDebut" layoutX="618.0" layoutY="121.0" prefHeight="25.0" prefWidth="149.0" />
+      <DatePicker fx:id="dateFin" layoutX="618.0" layoutY="158.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button fx:id="annuler" layoutX="355.0" layoutY="417.0" mnemonicParsing="false" onAction="#goToAffichage" style="-fx-background-color: grey;" text="Annuler" textFill="#07d7aa">
+         <font>
+            <Font name="Sitka Subheading" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="ajouter" layoutX="667.0" layoutY="417.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: grey;" text="Modifier" textFill="#07d7aa">
+         <font>
+            <Font name="Sitka Subheading" size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="type" layoutX="263.0" layoutY="196.0" prefWidth="150.0" />
+      <Label fx:id="titre" layoutX="33.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="47.0" prefWidth="860.0" style="-fx-background-color: grey;" text="Effectuez vos modifications!" textAlignment="CENTER" textFill="#07d7aa" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Sitka Subheading" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="aj" layoutX="626.0" layoutY="233.0" mnemonicParsing="false" onAction="#UpPhoto" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: grey;" text="Modifier l'image" textFill="#07d7aa" />
+      <JFXTextField fx:id="lg" layoutX="33.0" layoutY="184.0" visible="false" />
+      <JFXTextField fx:id="lat" layoutX="33.0" layoutY="209.0" visible="false" />
+      <JFXTextField fx:id="adresse" layoutX="270.0" layoutY="158.0" onKeyTyped="#fromOnKeyTypedEvent" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

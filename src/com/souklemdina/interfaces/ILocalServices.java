@@ -6,7 +6,10 @@
 package com.souklemdina.interfaces;
 
 import com.souklemdina.entities.Local;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,11 +17,17 @@ import java.util.List;
  */
 public interface ILocalServices {
 
-    public void create(Local l);
+    public void ajoutLocal(Local l, FileInputStream fis, File file);
 
-    public List<Local> findAll();
+    public ObservableList<Local> afficherLocal();
+    
+     public ObservableList<Local> afficherLocal2();
 
-    public void update(Local l);
+    public List<Local> afficherLocalUser(int idUser);
+    
+    public Local afficherLocalUn(int id);
 
-    public void delete(Local l);
+    public void modifierLocal(Local l);
+
+    public void supprimerLocal(int id);
 }
