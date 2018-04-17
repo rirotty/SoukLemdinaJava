@@ -41,7 +41,7 @@ public class EvenementServices implements IEvenementServices {
     @Override
     public void create(Evenement e) {
         try {
-            String req = "INSERT INTO evenement (nomEvenement,dateDebut,dateFin,adresse,prix,description,nbPlace,type,heure,photo) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            String req = "INSERT INTO evenement (nomEvenement,dateDebut,dateFin,adresse,prix,description,nbPlace,type,heure,photo,id_user) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement st = conn.prepareStatement(req);
             st.setString(1, e.getNomEvenement());
@@ -57,6 +57,7 @@ public class EvenementServices implements IEvenementServices {
             st.setString(8, e.getType());
             st.setObject(9, e.getHeure());
             st.setString(10, e.getPhoto());
+            st.setInt(11, e.getIdUser());
 // st.setDate(9, (java.sql.Date)e.getHeure());
 
             st.executeUpdate();

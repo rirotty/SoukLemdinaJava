@@ -221,6 +221,7 @@ public class EventAddFXMLController implements Initializable, MapComponentInitia
                     new Timestamp(0, 0, 0, heure.getValue().getHour(), heure.getValue().getMinute(), 0, 0),
                     this.newPhoto);
             ev.setIdUser(SessionUser.getUser().getId());
+            System.out.println(SessionUser.getUser().getId());
             es.create(ev);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
