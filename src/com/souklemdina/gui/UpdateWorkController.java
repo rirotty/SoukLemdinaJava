@@ -23,6 +23,7 @@ import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
 import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import com.souklemdina.entities.Workshop;
 import com.souklemdina.services.WorkshopServices;
+import com.souklemdina.util.SessionUser;
 import com.souklemdina.util.UploadFile;
 import java.io.File;
 import java.io.IOException;
@@ -148,8 +149,7 @@ public class UpdateWorkController implements Initializable, MapComponentInitiali
             alert.setHeaderText("verifiez vos dates");
             alert.showAndWait();
         } else {
-            this.w = ws.findbyid(this.w.getId());
-            this.w.setId(w.getId());
+            this.w = ws.findbyid(SessionUser.getUser().getId());
             this.w.setNomWorkshop(nom.getText());
             this.w.setAdresse(adresse.getText());
             this.w.setType(type.getValue().toString());

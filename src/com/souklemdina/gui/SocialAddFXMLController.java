@@ -115,12 +115,12 @@ public class SocialAddFXMLController implements Initializable {
 //            System.out.println(f.getAbsolutePath());
             if (txarTag.getText().matches("^.{0,255}$") && txarAbout.getText().matches("^.{0,255}$")) {
                 //Here User Connected Session Getting Logic
-                FosUser user = new FosUser(3);
+                FosUser user = SessionUser.getUser();
                 ProfileServices ps = new ProfileServices();
                 Profile p = ps.findByIdUser(user.getId());
                 if (p == null) {
                     p = new Profile(this.txarTag.getText(), this.txarAbout.getText(), user.getId());
-                    this.newPhotoName = UploadFile.uploadImage(f.getAbsolutePath(), p.getImage());
+                    this.newPhotoName = UploadFile.uploadImage(f.getAbsolutePath(), null);
                     f.delete();
 //                    System.out.println(f.delete());
 //                    System.out.println(newPhotoName);

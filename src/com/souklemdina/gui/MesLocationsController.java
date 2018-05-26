@@ -10,6 +10,7 @@ import com.souklemdina.entities.Local;
 import com.souklemdina.entities.Location;
 import com.souklemdina.services.LocalServices;
 import com.souklemdina.services.LocationServices;
+import com.souklemdina.util.SessionUser;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,105 +37,108 @@ import javafx.stage.Stage;
  *
  * @author ACER
  */
-
 public class MesLocationsController implements Initializable {
+
     @FXML
     private TableColumn<Local, String> colLocal;
 //    @FXML
 //    private TableColumn<Location, Date> colDateDebut;
 //    @FXML
 //    private TableColumn<Location, Date> colDateFin;
-     @FXML
+    @FXML
     private JFXTextField type;
-      @FXML
+    @FXML
     private JFXTextField adresse;
-       @FXML
+    @FXML
     private JFXTextField telephone;
-           @FXML
+    @FXML
     private JFXTextField dteDeb;
-               @FXML
+    @FXML
     private JFXTextField dteFin;
-        @FXML
+    @FXML
     private TableView<Local> tableLocal;
-    
-     private ObservableList<Location> locations;
-private ObservableList<Local> data;
+
+    private ObservableList<Location> locations;
+    private ObservableList<Local> data;
     @FXML
     private AnchorPane anch_pane;
 
     /**
      * Initializes the controller class.
      */
-     
-    
-     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       data = FXCollections.observableArrayList();
-       setCellTable(); 
+        data = FXCollections.observableArrayList();
+        setCellTable();
         AfficherLocation();
-        
-       
-    }  
-    
-      public void AfficherLocation() {
-         LocationServices ls = new LocationServices();
-         //recuperer idUser + aff date ds tableview
-         locations=ls.afficherLocationUser(2);
-         for (Location locat : locations){
-             int id = locat.getIdLocal();
-             LocalServices locs = new LocalServices();
-             Local loc = locs.afficherLocalUn(id);
-             data.add(loc);
-         }
-         tableLocal.setItems(data);
-       
+        setCellToText();
+
     }
-      public void setCellTable() {
+
+    public void AfficherLocation() {
+        LocationServices ls = new LocationServices();
+        //recuperer idUser + aff date ds tableview
+        locations = ls.afficherLocationUser(SessionUser.getUser().getId());
+        for (Location locat : locations) {
+            int id = locat.getIdLocal();
+            LocalServices locs = new LocalServices();
+            Local loc = locs.afficherLocalUn(id);
+            data.add(loc);
+        }
+        tableLocal.setItems(data);
+
+    }
+
+    public void setCellTable() {
         colLocal.setCellValueFactory(new PropertyValueFactory<>("type"));
 //        colDateDebut.setCellValueFactory(new PropertyValueFactory<>("dateDebutLocation"));
 //   
 //        colDateFin.setCellValueFactory(new PropertyValueFactory<>("dateFinLocation"));
-        
 
     }
-       public void setCellToText() {
-              tableLocal.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+    public void setCellToText() {
+        tableLocal.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
             @Override
             public void handle(MouseEvent event) {
-              
+
                 LocalServices locs = new LocalServices();
                 Local l = tableLocal.getItems().get(tableLocal.getSelectionModel().getSelectedIndex());
 //                Local loc = locs.afficherLocalUn(l.getId());
                 LocationServices ls = new LocationServices();
-                ObservableList<Location> location  = ls.afficherLocation(l.getId());        // recherche + idUser
-                           dteDeb.setText(location.get(0).getDateDebut().toString());
-                            dteFin.setText(location.get(0).getDateFin().toString());
+                ObservableList<Location> location = ls.afficherLocation(l.getId());
+                System.out.println(location);
+// recherche + idUser
+                dteDeb.setText(location.get(0).getDateDebut().toString());
+                dteFin.setText(location.get(0).getDateFin().toString());
                 type.setText(l.getType());
                 adresse.setText(l.getAdresse());
-                telephone.setText(l.getTelephone());}});}
-    
+                telephone.setText(l.getTelephone());
+            }
+        });
+    }
 
-     @FXML
+    @FXML
     private void handleBoutonRetour(ActionEvent event) throws IOException {
-         ScrollPane pageAffiche = FXMLLoader.load(getClass().getResource("Afficher1.fxml"));
+        ScrollPane pageAffiche = FXMLLoader.load(getClass().getResource("Afficher1.fxml"));
         this.anch_pane.getChildren().setAll(pageAffiche);
     }
 
     @FXML
     private void handleBoutonDetails(ActionEvent event) {
-        if (tableLocal.getSelectionModel().getSelectedIndex()<0){
-          AlertBox.display("Alerte", "veuillez sélectionner un local ");
-        }else{
-        setCellToText();}
+        if (tableLocal.getSelectionModel().getSelectedIndex() < 0) {
+            AlertBox.display("Alerte", "veuillez sélectionner un local ");
+        } else {
+            setCellToText();
+        }
     }
-    
-        @FXML
+
+    @FXML
     private void handleBoutonSupprimer(ActionEvent event) {
-        if (tableLocal.getSelectionModel().getSelectedIndex()<0){
-          AlertBox.display("Alerte", "veuillez sélectionner un local ");
-        }else{
+        if (tableLocal.getSelectionModel().getSelectedIndex() < 0) {
+            AlertBox.display("Alerte", "veuillez sélectionner un local ");
+        } else {
             LocationServices ls = new LocationServices();
             Local l = tableLocal.getItems().get(tableLocal.getSelectionModel().getSelectedIndex());
             int idLocal = l.getId(); // suppresion avec idUser + idLocal
@@ -142,4 +146,3 @@ private ObservableList<Local> data;
         }
     }
 }
-   

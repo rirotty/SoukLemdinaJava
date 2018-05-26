@@ -244,22 +244,21 @@ public class LocalServices implements ILocalServices, Serializable {
     
        @Override
     public Local afficherLocalUn(int id) {
-         ObservableList<Local> LocalList = FXCollections.observableArrayList();
+         Local l = null;
         try {
             String req = "select * from local where id=?";
             PreparedStatement stmt = cnx.prepareStatement(req);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                LocalList.add(new Local(rs.getInt("id"), rs.getDouble("superficie"), rs.getDouble("prix"), rs.getString("type"), rs.getString("description"), rs.getString("adresse"), rs.getString("telephone"), rs.getString("image")));
+            System.out.println(rs);
+            if (rs.next()) {
+                l = new Local(rs.getInt("id"), rs.getDouble("superficie"), rs.getDouble("prix"), rs.getString("type"), rs.getString("description"), rs.getString("adresse"), rs.getString("telephone"), rs.getString("image"));
                 //LocalList.add(new Local(rs.getInt("id"),rs.getDouble("superficie"),rs.getDouble("prix"),rs.getString("type")));
             }
             stmt.close();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-         Local l = LocalList.get(0);
         return l;
     }
     

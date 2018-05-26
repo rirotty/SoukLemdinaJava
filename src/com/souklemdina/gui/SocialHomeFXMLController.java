@@ -219,111 +219,112 @@ public class SocialHomeFXMLController implements Initializable {
         if (cancelbtn) {
             this.pane_vbox.getChildren().add(btn_cancel);
         }
-
-        posts.stream().forEach(e -> {
-            Profile userProfile = ps.findByIdUser(e.getIdUser());
-            Circle cir_profile = new Circle();
-            cir_profile.setVisible(true);
-            cir_profile.setRadius(60);
-            cir_profile.setStroke(Color.web("#b3b3b3"));
-            cir_profile.setStrokeWidth(1.5);
-            if (userProfile.getImage() == null) {
-                Image img = new Image("http://localhost/SoukLemdina/web/Template/images/icons/avatar.jpg");
+        if (posts != null) {
+            posts.stream().forEach(e -> {
+                Profile userProfile = ps.findByIdUser(e.getIdUser());
+                Circle cir_profile = new Circle();
+                cir_profile.setVisible(true);
+                cir_profile.setRadius(60);
+                cir_profile.setStroke(Color.web("#b3b3b3"));
+                cir_profile.setStrokeWidth(1.5);
+                if (userProfile.getImage() == null) {
+                    Image img = new Image("http://localhost/SoukLemdina/web/Template/images/icons/avatar.jpg");
 //            img_preview.setImage(img);
-                cir_profile.setFill(new ImagePattern(img));
-            } else {
-                Image img = new Image("http://localhost/SoukLemdina/web/uploads/images/" + userProfile.getImage());
+                    cir_profile.setFill(new ImagePattern(img));
+                } else {
+                    Image img = new Image("http://localhost/SoukLemdina/web/uploads/images/" + userProfile.getImage());
 //            img_preview.setImage(img);
-                cir_profile.setFill(new ImagePattern(img));
-            }
+                    cir_profile.setFill(new ImagePattern(img));
+                }
 
-            HBox HorizontalContainer = new HBox();
-            HorizontalContainer.setSpacing(20);
-            HorizontalContainer.setMaxWidth(this.pane_vbox.getWidth() - 200);
-            ImageView img_post = new ImageView();
-            img_post.setFitWidth(180);
-            img_post.setFitHeight(180);
-            img_post.setImage(new Image("http://localhost/SoukLemdina/web/uploads/images/" + e.getImage()));
-            VBox titTxt = new VBox();
-            titTxt.setSpacing(30);
-            Label tit = new Label(e.getTitre());
-            tit.setStyle("-fx-font-weight: bold;");
-            tit.setTextFill(Color.web("#ffffff"));
-            tit.setMinWidth(200);
-            tit.setWrapText(true);
-            Label txt = new Label(e.getTexte());
-            txt.setTextFill(Color.web("#ffffff"));
-            txt.setMinWidth(200);
-            txt.setWrapText(true);
-            HBox btnsPost = new HBox();
-            btnsPost.setSpacing(10);
-            btnsPost.setAlignment(Pos.BOTTOM_LEFT);
-            if (this.p.getIdUser() == e.getIdUser()) {
-                JFXButton btn_delete = new JFXButton();
-                btn_delete.setStyle("-fx-background-color: #40a84a");
-                btn_delete.setMinWidth(100);
-                btn_delete.setText("Effacer Post");
-                btn_delete.setTextFill(Color.valueOf("#e3e3e3"));
-                btn_delete.setWrapText(true);
-                btn_delete.setOnAction((event) -> {
-                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                    alert.setTitle("Confirmation");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Voulez-vous vraiment supprimer cette publication?");
-                    Optional<ButtonType> result = alert.showAndWait();
-                    if (result.get() == ButtonType.OK) {
-                        pss.deleteById(e.getId());
-                        System.out.println(e.getId());
-                        this.showContent(false);
-                    }
-                });
-
-                JFXButton btn_modify = new JFXButton();
-                btn_modify.setStyle("-fx-background-color: #40a84a");
-                btn_modify.setMinWidth(100);
-                btn_modify.setText("Modifier");
-                btn_modify.setTextFill(Color.valueOf("#e3e3e3"));
-                btn_modify.setWrapText(true);
-                btn_modify.setOnAction((event) -> {
-                    this.txfTitre.setText(e.getTitre());
-                    this.txarTexte.setText(e.getTexte());
-                    this.img_preview.setImage(new Image("http://localhost/SoukLemdina/web/uploads/images/" + e.getImage()));
-                    this.postPhoto = e.getImage();
-                    this.btn_save.setText("Modifier");
-                    this.btn_save.setOnAction((ev) -> {
-                        this.handleUpdateBtn(e.getId());
+                HBox HorizontalContainer = new HBox();
+                HorizontalContainer.setSpacing(20);
+                HorizontalContainer.setMaxWidth(this.pane_vbox.getWidth() - 200);
+                ImageView img_post = new ImageView();
+                img_post.setFitWidth(180);
+                img_post.setFitHeight(180);
+                img_post.setImage(new Image("http://localhost/SoukLemdina/web/uploads/images/" + e.getImage()));
+                VBox titTxt = new VBox();
+                titTxt.setSpacing(30);
+                Label tit = new Label(e.getTitre());
+                tit.setStyle("-fx-font-weight: bold;");
+                tit.setTextFill(Color.web("#ffffff"));
+                tit.setMinWidth(200);
+                tit.setWrapText(true);
+                Label txt = new Label(e.getTexte());
+                txt.setTextFill(Color.web("#ffffff"));
+                txt.setMinWidth(200);
+                txt.setWrapText(true);
+                HBox btnsPost = new HBox();
+                btnsPost.setSpacing(10);
+                btnsPost.setAlignment(Pos.BOTTOM_LEFT);
+                if (this.p.getIdUser() == e.getIdUser()) {
+                    JFXButton btn_delete = new JFXButton();
+                    btn_delete.setStyle("-fx-background-color: #40a84a");
+                    btn_delete.setMinWidth(100);
+                    btn_delete.setText("Effacer Post");
+                    btn_delete.setTextFill(Color.valueOf("#e3e3e3"));
+                    btn_delete.setWrapText(true);
+                    btn_delete.setOnAction((event) -> {
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                        alert.setTitle("Confirmation");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Voulez-vous vraiment supprimer cette publication?");
+                        Optional<ButtonType> result = alert.showAndWait();
+                        if (result.get() == ButtonType.OK) {
+                            pss.deleteById(e.getId());
+                            System.out.println(e.getId());
+                            this.showContent(false);
+                        }
                     });
-                    this.showContent(true);
-                });
 
-                btnsPost.getChildren().add(btn_modify);
-                btnsPost.getChildren().add(btn_delete);
-            } else {
-                JFXButton btn_signal = new JFXButton("Signaler");
-                btn_signal.setStyle("-fx-background-color: #40a84a");
-                btn_signal.setMinWidth(100);
-                btn_signal.setMaxWidth(200);
-                btn_signal.setTextFill(Color.valueOf("#e3e3e3"));
-                btn_signal.setOnAction((ev) -> {
-                    btn_signal.setDisable(true);
-                    this.pss.signaler(e);
-                });
-                btnsPost.getChildren().add(btn_signal);
-            }
-            Label dat = new Label(new Date(e.getDate().getTime()).toString());
-            dat.setTextFill(Color.web("#ffffff"));
-            titTxt.getChildren().add(tit);
-            titTxt.getChildren().add(dat);
-            titTxt.getChildren().add(txt);
-            titTxt.getChildren().add(btnsPost);
-            HorizontalContainer.getChildren().add(cir_profile);
-            HorizontalContainer.getChildren().add(img_post);
-            HorizontalContainer.getChildren().add(titTxt);
-            HorizontalContainer.setAlignment(Pos.CENTER);
-            Label lab1 = new Label();
-            this.pane_vbox.getChildren().add(HorizontalContainer);
-            this.pane_vbox.getChildren().add(lab1);
-        });
+                    JFXButton btn_modify = new JFXButton();
+                    btn_modify.setStyle("-fx-background-color: #40a84a");
+                    btn_modify.setMinWidth(100);
+                    btn_modify.setText("Modifier");
+                    btn_modify.setTextFill(Color.valueOf("#e3e3e3"));
+                    btn_modify.setWrapText(true);
+                    btn_modify.setOnAction((event) -> {
+                        this.txfTitre.setText(e.getTitre());
+                        this.txarTexte.setText(e.getTexte());
+                        this.img_preview.setImage(new Image("http://localhost/SoukLemdina/web/uploads/images/" + e.getImage()));
+                        this.postPhoto = e.getImage();
+                        this.btn_save.setText("Modifier");
+                        this.btn_save.setOnAction((ev) -> {
+                            this.handleUpdateBtn(e.getId());
+                        });
+                        this.showContent(true);
+                    });
+
+                    btnsPost.getChildren().add(btn_modify);
+                    btnsPost.getChildren().add(btn_delete);
+                } else {
+                    JFXButton btn_signal = new JFXButton("Signaler");
+                    btn_signal.setStyle("-fx-background-color: #40a84a");
+                    btn_signal.setMinWidth(100);
+                    btn_signal.setMaxWidth(200);
+                    btn_signal.setTextFill(Color.valueOf("#e3e3e3"));
+                    btn_signal.setOnAction((ev) -> {
+                        btn_signal.setDisable(true);
+                        this.pss.signaler(e);
+                    });
+                    btnsPost.getChildren().add(btn_signal);
+                }
+                Label dat = new Label(new Date(e.getDate().getTime()).toString());
+                dat.setTextFill(Color.web("#ffffff"));
+                titTxt.getChildren().add(tit);
+                titTxt.getChildren().add(dat);
+                titTxt.getChildren().add(txt);
+                titTxt.getChildren().add(btnsPost);
+                HorizontalContainer.getChildren().add(cir_profile);
+                HorizontalContainer.getChildren().add(img_post);
+                HorizontalContainer.getChildren().add(titTxt);
+                HorizontalContainer.setAlignment(Pos.CENTER);
+                Label lab1 = new Label();
+                this.pane_vbox.getChildren().add(HorizontalContainer);
+                this.pane_vbox.getChildren().add(lab1);
+            });
+        }
     }
 
 }

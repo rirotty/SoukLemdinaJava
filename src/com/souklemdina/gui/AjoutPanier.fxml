@@ -36,7 +36,7 @@
                </font></Button>
             <Label fx:id="l2" text="Ou" />
             <Separator prefHeight="11.0" prefWidth="282.0" />
-            <Button fx:id="btnArriere" mnemonicParsing="false" onAction="#goToCommande" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #f1b52a;" text="Continuer vos achats" textFill="#4d88a8">
+            <Button fx:id="btnArriere" mnemonicParsing="false" onAction="#goToProds" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #f1b52a;" text="Continuer vos achats" textFill="#4d88a8">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
@@ -61,5 +61,6 @@
       <Label layoutX="14.0" layoutY="526.0" text="Total Panier" textFill="#4d88a8" />
       <Label fx:id="lbltot" layoutX="86.0" layoutY="526.0" text="Label" />
       <Button fx:id="btnwish" layoutX="510.0" layoutY="521.0" mnemonicParsing="false" onAction="#goToWishList" text="Ma Wishlist" textFill="#4d88a8" />
+      <Button fx:id="btnwish1" layoutX="371.0" layoutY="521.0" mnemonicParsing="false" onAction="#goToComList" text="Mes Commandes" textFill="#4d88a8" />
    </children>
 </AnchorPane>

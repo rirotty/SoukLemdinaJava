@@ -211,13 +211,13 @@ public class WorkshopServices implements IWorkshopServices {
 
         try {
 
-            String select = "SELECT * FROM workshop WHERE  id_user = '" + id + "' ";
+            String select = "SELECT * FROM workshop WHERE  id_user = " + id + " ";
             Statement statement1 = conn.createStatement();
             ResultSet result = statement1.executeQuery(select);
 
             while (result.next()) {
-                wo.setId(result.getInt("id"));
 //                wo.setId(result.getInt("id"));
+                wo.setId(result.getInt("id"));
                 wo.setNomWorkshop(result.getString("nomWorkshop"));
                 wo.setType(result.getString("type"));
                 wo.setDateDebut(result.getTimestamp("dateDebut"));

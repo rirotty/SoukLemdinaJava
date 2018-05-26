@@ -179,11 +179,16 @@ public class ProduitsViewFXMLController implements Initializable {
                             Integer idP = getTableView().getItems().get(i).getId();
                             Integer id = getTableView().getItems().indexOf(p);
                             WishlistServices wsss = new WishlistServices();
-                            if (wsss.getWishListById(SessionUser.getUser().getId()) != null){
+                            if (wsss.getWishListById(SessionUser.getUser().getId()).getId() != null){
                                 LigneWishlistServices ls = new LigneWishlistServices();
+                                System.out.println(ls);
                                 LigneWishlist lw = new LigneWishlist();
                                 lw.setIdProduit(idP);
                                 lw.setIdWishlist(wsss.getWishListById(SessionUser.getUser().getId()).getId());
+                                System.out.println(SessionUser.getUser().getId());
+                                System.out.println(wsss.getWishListById(SessionUser.getUser().getId()));
+                                System.out.println(wsss.getWishListById(SessionUser.getUser().getId()).getId());
+                                System.out.println(lw);
                                 ls.create(lw);
                             } else {
                                 Wishlist  www = new Wishlist();

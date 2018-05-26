@@ -428,10 +428,20 @@ hbox22.setStyle("-fx-padding: 10;" + "-fx-border-style: solid inside;"
                          Logger.getLogger(PaypalFXMLController.class.getName()).log(Level.SEVERE, null, ex);
                      }
        this.ancp.getChildren().setAll(p);
-
-        
-
     }
+    
+    @FXML
+    private void goToProds(ActionEvent event) throws IOException {
+        
+        AnchorPane p = null;
+                     try {
+                         p = FXMLLoader.load(getClass().getResource("ProduitsViewFXML.fxml"));
+                     } catch (IOException ex) {
+                         Logger.getLogger(PaypalFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+                     }
+       this.ancp.getChildren().setAll(p);
+    }
+    
 
     @FXML
     private void goToWishList(ActionEvent event) throws IOException {
@@ -439,6 +449,21 @@ hbox22.setStyle("-fx-padding: 10;" + "-fx-border-style: solid inside;"
         AnchorPane p = null;
                      try {
                          p = FXMLLoader.load(getClass().getResource("WishListV2FXML.fxml"));
+                     } catch (IOException ex) {
+                         Logger.getLogger(PaypalFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+                     }
+       this.ancp.getChildren().setAll(p);
+
+        
+
+    }
+
+    @FXML
+    private void goToComList(ActionEvent event) throws IOException {
+        
+        AnchorPane p = null;
+                     try {
+                         p = FXMLLoader.load(getClass().getResource("AfficherCommandeFXML.fxml"));
                      } catch (IOException ex) {
                          Logger.getLogger(PaypalFXMLController.class.getName()).log(Level.SEVERE, null, ex);
                      }

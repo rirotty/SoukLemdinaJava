@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SoukLemdina.jar" size="8882191" download="eager" />
+    <jar href="SoukLemdina.jar" size="8882613" download="eager" />
     <jar href="lib/GMapsFX-2.0.9.jar" size="166541" download="eager" />
     <jar href="lib/GMapsFX-2.10.0.jar" size="183132" download="eager" />
     <jar href="lib/apache-mime4j-0.3.jar" size="178126" download="eager" />
